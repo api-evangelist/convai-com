@@ -1,0 +1,57 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: Convai
+providerId: convai-com
+created: '2026-05-25'
+modified: '2026-05-25'
+reconciled: false
+tags:
+  - AI
+  - Conversational AI
+  - Rate Limiting
+description: |
+  Rate-limit posture for the Convai REST, streaming transcription, and Live
+  WebRTC APIs. Convai's primary throttling surface is interaction quotas
+  enforced per plan tier (see plans/convai-plans-pricing.yml) rather than a
+  globally published RPM/QPS table; per-account caps and concurrency limits
+  are negotiated for Scale and Enterprise tiers. The records below capture the
+  general algorithm shape (account-level quotas plus per-request fairness)
+  and should be reconciled with the live docs before production use.
+sources:
+  - https://convai.com/pricing
+  - https://docs.convai.com/api-docs/api-reference/core-api-reference
+headers:
+  retryAfter: retry-after
+responseCodes:
+  throttled: 429
+  quotaExceeded: 429
+algorithm: account-quota
+spendLimits: []
+limits:
+  - tier: Free
+    resource: Interaction API
+    quota: limited monthly interactions
+    concurrency: low
+  - tier: Indie
+    resource: Interaction API
+    quota: higher monthly interactions
+    concurrency: standard
+  - tier: Professional
+    resource: Interaction API
+    quota: larger monthly interactions
+    concurrency: standard
+  - tier: Scale
+    resource: Interaction API
+    quota: production-grade interactions
+    concurrency: elevated
+  - tier: Enterprise
+    resource: Interaction API
+    quota: negotiated
+    concurrency: dedicated
+  - tier: All
+    resource: Streaming Transcription (wss)
+    notes: 16-bit PCM mono 16 kHz audio frames; one stream per session
+  - tier: All
+    resource: Live API (WebRTC, beta)
+    notes: Per-session WebRTC PeerConnection; metrics and audio data channels

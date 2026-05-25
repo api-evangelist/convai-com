@@ -1,0 +1,77 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@vocab": "https://schema.org/",
+    "convai": "https://api.convai.com/",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+
+    "Character": {
+      "@id": "convai:Character",
+      "@context": {
+        "charID": { "@id": "convai:Character/charID", "@type": "xsd:string" },
+        "charName": { "@id": "convai:Character/charName", "@type": "xsd:string" },
+        "voiceType": { "@id": "convai:Character/voiceType", "@type": "xsd:string" },
+        "backstory": { "@id": "convai:Character/backstory", "@type": "xsd:string" },
+        "language": { "@id": "convai:Character/language", "@type": "xsd:string" },
+        "isNarrativeDriven": { "@id": "convai:Character/isNarrativeDriven", "@type": "xsd:boolean" },
+        "timestamp": { "@id": "convai:Character/timestamp", "@type": "xsd:dateTime" }
+      }
+    },
+
+    "Interaction": {
+      "@id": "convai:Interaction",
+      "@context": {
+        "sessionID": { "@id": "convai:Interaction/sessionID", "@type": "xsd:string" },
+        "charID": { "@id": "convai:Interaction/charID", "@type": "xsd:string" },
+        "userText": { "@id": "convai:Interaction/userText", "@type": "xsd:string" },
+        "text": { "@id": "convai:Interaction/text", "@type": "xsd:string" },
+        "audio": { "@id": "convai:Interaction/audio" },
+        "action": { "@id": "convai:Interaction/action", "@type": "xsd:string" },
+        "emotion": { "@id": "convai:Interaction/emotion", "@type": "xsd:string" },
+        "narrativeSectionId": { "@id": "convai:Interaction/narrativeSectionId", "@type": "xsd:string" }
+      }
+    },
+
+    "KnowledgeBankDocument": {
+      "@id": "convai:KnowledgeBankDocument",
+      "@context": {
+        "document_id": { "@id": "convai:KnowledgeBankDocument/id", "@type": "xsd:string" },
+        "file_name": { "@id": "convai:KnowledgeBankDocument/fileName", "@type": "xsd:string" },
+        "character_id": { "@id": "convai:KnowledgeBankDocument/characterId", "@type": "xsd:string" },
+        "status": { "@id": "convai:KnowledgeBankDocument/status", "@type": "xsd:string" }
+      }
+    },
+
+    "NarrativeSection": {
+      "@id": "convai:NarrativeSection",
+      "@context": {
+        "section_id": { "@id": "convai:NarrativeSection/id", "@type": "xsd:string" },
+        "section_name": { "@id": "convai:NarrativeSection/name", "@type": "xsd:string" },
+        "objective": { "@id": "convai:NarrativeSection/objective", "@type": "xsd:string" },
+        "behavior_tree_code": { "@id": "convai:NarrativeSection/behaviorTreeCode", "@type": "xsd:string" }
+      }
+    },
+
+    "NarrativeTrigger": {
+      "@id": "convai:NarrativeTrigger",
+      "@context": {
+        "trigger_id": { "@id": "convai:NarrativeTrigger/id", "@type": "xsd:string" },
+        "trigger_name": { "@id": "convai:NarrativeTrigger/name", "@type": "xsd:string" },
+        "trigger_message": { "@id": "convai:NarrativeTrigger/message", "@type": "xsd:string" },
+        "destination_section": { "@id": "convai:NarrativeTrigger/destinationSection", "@type": "xsd:string" }
+      }
+    },
+
+    "Voice": {
+      "@id": "convai:Voice",
+      "@context": {
+        "voice": { "@id": "convai:Voice/id", "@type": "xsd:string" },
+        "language": { "@id": "convai:Voice/language", "@type": "xsd:string" },
+        "gender": { "@id": "convai:Voice/gender", "@type": "xsd:string" },
+        "description": { "@id": "convai:Voice/description", "@type": "xsd:string" }
+      }
+    }
+  }
+}

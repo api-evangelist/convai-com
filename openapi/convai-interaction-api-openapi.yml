@@ -1,0 +1,76 @@
+openapi: 3.1.0
+info:
+  title: Convai Interaction API
+  version: "1.0"
+  description: |
+    The Interaction API is the runtime conversational endpoint for Convai
+    characters. Send user text or audio with a sessionID and characterID and
+    receive the character's spoken and animated response, including text reply,
+    audio bytes, action triggers, emotion state, and lip-sync data. This is the
+    endpoint that powers in-game and in-world NPC conversations.
+servers:
+- url: https://api.convai.com
+security:
+- ConvaiApiKey: []
+paths:
+  /character/getResponse:
+    post:
+      summary: Get Character Response
+      operationId: getCharacterResponse
+      tags: [Interaction]
+      description: |
+        Send user input to a Convai character and receive its conversational
+        response. Supports text and audio input, with audio, text, action, and
+        emotion outputs. Use sessionID="-1" to start a new conversation.
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/GetResponseRequest'
+      responses:
+        '200':
+          description: Character response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetResponseResponse'
+components:
+  securitySchemes:
+    ConvaiApiKey:
+      type: apiKey
+      in: header
+      name: CONVAI-API-KEY
+  schemas:
+    GetResponseRequest:
+      type: object
+      required: [userText, charID, sessionID, voiceResponse]
+      properties:
+        userText:
+          type: string
+          description: User input as text. Use "(USER_PERFORMED_ACTIONS)" placeholder when sending audio.
+        charID: { type: string }
+        sessionID:
+          type: string
+          description: Use "-1" to start a new session
+        voiceResponse:
+          type: boolean
+          description: Whether to include audio in the response
+        file:
+          type: string
+          format: binary
+          description: Optional audio file (wav) for voice input
+    GetResponseResponse:
+      type: object
+      properties:
+        text:
+          type: string
+          description: Character text reply
+        audio:
+          type: string
+          format: byte
+          description: Base64-encoded audio response
+        sessionID: { type: string }
+        action: { type: string }
+        emotion: { type: string }
+        narrativeSectionId: { type: string }

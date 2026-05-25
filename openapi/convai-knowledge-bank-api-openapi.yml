@@ -1,0 +1,108 @@
+openapi: 3.1.0
+info:
+  title: Convai Knowledge Bank API
+  version: "1.0"
+  description: |
+    Manage retrieval-augmented knowledge documents attached to Convai
+    characters. Upload PDFs, text, and other docs that characters will
+    reference when generating responses. Enterprise tier.
+servers:
+- url: https://api.convai.com
+security:
+- ConvaiApiKey: []
+paths:
+  /character/knowledge-bank/upload:
+    post:
+      summary: Upload Knowledge Bank Document
+      operationId: uploadKnowledgeBank
+      tags: [Knowledge Bank]
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required: [file_name, file, character_id]
+              properties:
+                file_name: { type: string }
+                file: { type: string, format: binary }
+                character_id: { type: string }
+      responses:
+        '200':
+          description: Document uploaded
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  document_id: { type: string }
+  /character/knowledge-bank/update:
+    post:
+      summary: Update Knowledge Bank Document
+      operationId: updateKnowledgeBank
+      tags: [Knowledge Bank]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [document_id, character_id]
+              properties:
+                document_id: { type: string }
+                character_id: { type: string }
+                docs: { type: string }
+      responses:
+        '200':
+          description: Updated
+  /character/knowledge-bank/list:
+    post:
+      summary: List Knowledge Bank Documents
+      operationId: listKnowledgeBank
+      tags: [Knowledge Bank]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [character_id]
+              properties:
+                character_id: { type: string }
+      responses:
+        '200':
+          description: Document list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    document_id: { type: string }
+                    file_name: { type: string }
+                    status: { type: string }
+  /character/knowledge-bank/delete:
+    post:
+      summary: Delete Knowledge Bank Document
+      operationId: deleteKnowledgeBank
+      tags: [Knowledge Bank]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [document_id, character_id]
+              properties:
+                document_id: { type: string }
+                character_id: { type: string }
+      responses:
+        '200':
+          description: Deleted
+components:
+  securitySchemes:
+    ConvaiApiKey:
+      type: apiKey
+      in: header
+      name: CONVAI-API-KEY

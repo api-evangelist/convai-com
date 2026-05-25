@@ -1,0 +1,48 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Convai Evaluation API — Evaluation
+  description: Convai Evaluation — score and evaluate Convai character sessions against a custom prompt and
+    rubric variables. 1 operation.
+  tags:
+  - Convai
+  - Evaluation
+  - Quality
+  created: '2026-05-25'
+  modified: '2026-05-25'
+binds:
+- namespace: env
+  keys:
+    CONVAI_API_KEY: CONVAI_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: evaluation-evaluation
+    baseUri: https://api.convai.com
+    description: Convai Evaluation business surface.
+    resources:
+    - name: evaluation-evaluate
+      path: /evaluation/evaluate-session
+      operations:
+      - name: evaluatesession
+        method: POST
+        description: Convai Evaluate Session
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          required: true
+    authentication:
+      type: apikey
+      key: CONVAI-API-KEY
+      value: '{{env.CONVAI_API_KEY}}'
+      placement: header
+  exposes:
+  - type: mcp
+    namespace: evaluation-mcp
+    port: 9090
+    transport: http
+    tools:
+    - name: convai-evaluate-session
+      description: Convai Evaluate Session against a custom rubric.
+      call: evaluation-evaluation.evaluatesession
+      with: { body: tools.body }

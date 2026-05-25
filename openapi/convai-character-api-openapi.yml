@@ -1,0 +1,159 @@
+openapi: 3.1.0
+info:
+  title: Convai Character API
+  version: "1.0"
+  description: |
+    REST API for creating, listing, updating, cloning, and deleting Convai
+    conversational AI characters. Characters are reusable conversational agents
+    with backstory, voice, personality, language, and knowledge configuration
+    that can be embodied in games, virtual worlds, and 3D experiences via the
+    Unity, Unreal, Web, and other Convai SDKs.
+  contact:
+    name: Convai Developer Support
+    url: https://forum.convai.com
+servers:
+- url: https://api.convai.com
+  description: Convai REST API
+security:
+- ConvaiApiKey: []
+paths:
+  /character/create:
+    post:
+      summary: Create Character
+      operationId: createCharacter
+      tags: [Characters]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CharacterCreateRequest'
+      responses:
+        '200':
+          description: Character created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CharacterCreateResponse'
+  /character/get:
+    post:
+      summary: Get Character
+      operationId: getCharacter
+      tags: [Characters]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [charID]
+              properties:
+                charID: { type: string }
+      responses:
+        '200':
+          description: Character details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Character'
+  /character/update:
+    post:
+      summary: Update Character
+      operationId: updateCharacter
+      tags: [Characters]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CharacterUpdateRequest'
+      responses:
+        '200':
+          description: Character updated
+  /character/list:
+    post:
+      summary: List Characters
+      operationId: listCharacters
+      tags: [Characters]
+      responses:
+        '200':
+          description: List of characters
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Character'
+  /character/delete:
+    post:
+      summary: Delete Character
+      operationId: deleteCharacter
+      tags: [Characters]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [charID]
+              properties:
+                charID: { type: string }
+      responses:
+        '200':
+          description: Character deleted
+  /user/clone_character:
+    post:
+      summary: Clone Character
+      operationId: cloneCharacter
+      tags: [Characters]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [charID]
+              properties:
+                charID: { type: string }
+      responses:
+        '200':
+          description: Character cloned
+components:
+  securitySchemes:
+    ConvaiApiKey:
+      type: apiKey
+      in: header
+      name: CONVAI-API-KEY
+  schemas:
+    CharacterCreateRequest:
+      type: object
+      required: [charName, voiceType, backstory]
+      properties:
+        charName: { type: string }
+        voiceType: { type: string, description: "Voice identifier from the Voice List API" }
+        backstory: { type: string }
+        language: { type: string, default: en-us }
+        timezone: { type: string }
+    CharacterUpdateRequest:
+      type: object
+      required: [charID]
+      properties:
+        charID: { type: string }
+        charName: { type: string }
+        voiceType: { type: string }
+        backstory: { type: string }
+        language: { type: string }
+    CharacterCreateResponse:
+      type: object
+      properties:
+        charID: { type: string }
+        status: { type: string }
+    Character:
+      type: object
+      properties:
+        charID: { type: string }
+        charName: { type: string }
+        voiceType: { type: string }
+        backstory: { type: string }
+        language: { type: string }
+        timestamp: { type: string, format: date-time }

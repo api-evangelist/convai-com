@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/convai-com/main/json-schema/convai-interaction-schema.json",
+  "title": "Convai Interaction",
+  "description": "Request and response shape for /character/getResponse — the runtime NPC dialogue endpoint.",
+  "type": "object",
+  "properties": {
+    "request": {
+      "type": "object",
+      "required": ["userText", "charID", "sessionID", "voiceResponse"],
+      "properties": {
+        "userText": { "type": "string" },
+        "charID": { "type": "string" },
+        "sessionID": {
+          "type": "string",
+          "description": "Use '-1' to start a new session"
+        },
+        "voiceResponse": { "type": "boolean" },
+        "audio": {
+          "type": "string",
+          "contentEncoding": "base64",
+          "description": "Optional base64 audio when sending voice input"
+        }
+      }
+    },
+    "response": {
+      "type": "object",
+      "properties": {
+        "text": { "type": "string" },
+        "audio": { "type": "string", "contentEncoding": "base64" },
+        "sessionID": { "type": "string" },
+        "action": { "type": "string" },
+        "emotion": { "type": "string" },
+        "narrativeSectionId": { "type": "string" }
+      }
+    }
+  }
+}

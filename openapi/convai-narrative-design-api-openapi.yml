@@ -1,0 +1,247 @@
+openapi: 3.1.0
+info:
+  title: Convai Narrative Design API
+  version: "1.0"
+  description: |
+    Configure narrative-driven characters using sections and triggers. Sections
+    define discrete narrative beats; triggers move the character between
+    sections based on conditions. Used to build branching, scripted experiences
+    on top of Convai's conversational AI.
+servers:
+- url: https://api.convai.com
+security:
+- ConvaiApiKey: []
+paths:
+  /character/toggle-is-narrative-driven:
+    post:
+      summary: Toggle Narrative Mode
+      operationId: toggleNarrativeDriven
+      tags: [Narrative]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [character_id, is_narrative_driven]
+              properties:
+                character_id: { type: string }
+                is_narrative_driven: { type: boolean }
+      responses:
+        '200': { description: Updated }
+  /character/narrative/create-section:
+    post:
+      summary: Create Narrative Section
+      operationId: createSection
+      tags: [Narrative]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Section'
+      responses:
+        '200':
+          description: Section created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  section_id: { type: string }
+  /character/narrative/edit-section:
+    post:
+      summary: Edit Narrative Section
+      operationId: editSection
+      tags: [Narrative]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Section'
+      responses:
+        '200': { description: Section updated }
+  /character/narrative/get-section:
+    post:
+      summary: Get Narrative Section
+      operationId: getSection
+      tags: [Narrative]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [character_id, section_id]
+              properties:
+                character_id: { type: string }
+                section_id: { type: string }
+      responses:
+        '200':
+          description: Section
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Section'
+  /character/narrative/list-sections:
+    post:
+      summary: List Narrative Sections
+      operationId: listSections
+      tags: [Narrative]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [character_id]
+              properties:
+                character_id: { type: string }
+      responses:
+        '200':
+          description: Section list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Section'
+  /character/narrative/delete-section:
+    post:
+      summary: Delete Narrative Section
+      operationId: deleteSection
+      tags: [Narrative]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [character_id, section_id]
+              properties:
+                character_id: { type: string }
+                section_id: { type: string }
+      responses:
+        '200': { description: Section deleted }
+  /character/narrative/create-trigger:
+    post:
+      summary: Create Narrative Trigger
+      operationId: createTrigger
+      tags: [Narrative]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Trigger'
+      responses:
+        '200':
+          description: Trigger created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  trigger_id: { type: string }
+  /character/narrative/update-trigger:
+    post:
+      summary: Update Narrative Trigger
+      operationId: updateTrigger
+      tags: [Narrative]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Trigger'
+      responses:
+        '200': { description: Trigger updated }
+  /character/narrative/get-trigger:
+    post:
+      summary: Get Narrative Trigger
+      operationId: getTrigger
+      tags: [Narrative]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [character_id, trigger_id]
+              properties:
+                character_id: { type: string }
+                trigger_id: { type: string }
+      responses:
+        '200':
+          description: Trigger
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Trigger'
+  /character/narrative/list-triggers:
+    post:
+      summary: List Narrative Triggers
+      operationId: listTriggers
+      tags: [Narrative]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [character_id]
+              properties:
+                character_id: { type: string }
+      responses:
+        '200':
+          description: Trigger list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Trigger'
+  /character/narrative/delete-trigger:
+    post:
+      summary: Delete Narrative Trigger
+      operationId: deleteTrigger
+      tags: [Narrative]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [character_id, trigger_id]
+              properties:
+                character_id: { type: string }
+                trigger_id: { type: string }
+      responses:
+        '200': { description: Trigger deleted }
+components:
+  securitySchemes:
+    ConvaiApiKey:
+      type: apiKey
+      in: header
+      name: CONVAI-API-KEY
+  schemas:
+    Section:
+      type: object
+      required: [character_id, section_name, objective]
+      properties:
+        character_id: { type: string }
+        section_id: { type: string }
+        section_name: { type: string }
+        objective: { type: string }
+        behavior_tree_code: { type: string }
+        updates_player_persona: { type: boolean }
+    Trigger:
+      type: object
+      required: [character_id, trigger_name]
+      properties:
+        character_id: { type: string }
+        trigger_id: { type: string }
+        trigger_name: { type: string }
+        trigger_message: { type: string }
+        destination_section: { type: string }

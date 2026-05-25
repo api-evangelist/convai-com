@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/convai-com/main/json-schema/convai-character-schema.json",
+  "title": "Convai Character",
+  "description": "A Convai conversational AI character — a reusable agent with voice, backstory, language, personality, knowledge bank, and narrative configuration.",
+  "type": "object",
+  "required": ["charID", "charName"],
+  "properties": {
+    "charID": {
+      "type": "string",
+      "description": "Convai character identifier"
+    },
+    "charName": {
+      "type": "string",
+      "description": "Display name of the character"
+    },
+    "voiceType": {
+      "type": "string",
+      "description": "Voice identifier from the Convai voice catalog"
+    },
+    "backstory": {
+      "type": "string",
+      "description": "Free-form backstory text shaping the character's identity, role, and behaviour"
+    },
+    "language": {
+      "type": "string",
+      "description": "BCP-47 style language code, e.g. en-us"
+    },
+    "timezone": {
+      "type": "string",
+      "description": "IANA timezone for the character"
+    },
+    "isNarrativeDriven": {
+      "type": "boolean",
+      "description": "Whether the character runs in narrative-driven mode with sections and triggers"
+    },
+    "knowledgeBank": {
+      "type": "array",
+      "description": "Optional list of attached knowledge bank documents",
+      "items": {
+        "type": "object",
+        "properties": {
+          "document_id": { "type": "string" },
+          "file_name": { "type": "string" },
+          "status": { "type": "string" }
+        }
+      }
+    },
+    "personality": {
+      "type": "object",
+      "description": "Personality and state-of-mind settings",
+      "additionalProperties": true
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "additionalProperties": true
+}

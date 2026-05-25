@@ -1,0 +1,87 @@
+openapi: 3.1.0
+info:
+  title: Convai Text-to-Speech API
+  version: "1.0"
+  description: |
+    Generate audio from text using Convai's voice catalog. Returns audio bytes
+    in the requested encoding for use in games, virtual worlds, and accessibility
+    flows. Voice catalog and supported languages are queryable via the TTS
+    listing endpoints. Enterprise tier.
+servers:
+- url: https://api.convai.com
+security:
+- ConvaiApiKey: []
+paths:
+  /tts:
+    post:
+      summary: Synthesize Speech
+      operationId: synthesizeSpeech
+      tags: [TTS]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [transcript, voice]
+              properties:
+                transcript: { type: string }
+                voice: { type: string }
+                filename: { type: string }
+                encoding:
+                  type: string
+                  enum: [wav, mp3, pcm]
+      responses:
+        '200':
+          description: Audio bytes
+          content:
+            audio/wav:
+              schema:
+                type: string
+                format: binary
+            audio/mpeg:
+              schema:
+                type: string
+                format: binary
+  /tts/get_available_voices:
+    get:
+      summary: List Available Voices
+      operationId: listVoices
+      tags: [TTS]
+      responses:
+        '200':
+          description: Voice list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    voice: { type: string }
+                    language: { type: string }
+                    gender: { type: string }
+                    description: { type: string }
+  /tts/get_available_languages:
+    get:
+      summary: List Available Languages
+      operationId: listLanguages
+      tags: [TTS]
+      responses:
+        '200':
+          description: Language list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    language: { type: string }
+                    code: { type: string }
+components:
+  securitySchemes:
+    ConvaiApiKey:
+      type: apiKey
+      in: header
+      name: CONVAI-API-KEY

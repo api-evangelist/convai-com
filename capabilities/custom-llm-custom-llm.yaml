@@ -1,0 +1,89 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Convai Custom LLM API — Custom LLM
+  description: Convai Custom LLM — register and manage OpenAI-compatible LLM endpoints as the reasoning backbone
+    for characters. 4 operations.
+  tags:
+  - Convai
+  - Custom LLM
+  - BYO Model
+  created: '2026-05-25'
+  modified: '2026-05-25'
+binds:
+- namespace: env
+  keys:
+    CONVAI_API_KEY: CONVAI_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: custom-llm-custom-llm
+    baseUri: https://api.convai.com
+    description: Convai Custom LLM business surface.
+    resources:
+    - name: custom-llm-register
+      path: /custom-llm/register
+      operations:
+      - name: register
+        method: POST
+        description: Convai Register Custom LLM
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          required: true
+    - name: custom-llm-update
+      path: /custom-llm/update
+      operations:
+      - name: update
+        method: POST
+        description: Convai Update Custom LLM
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          required: true
+    - name: custom-llm-deregister
+      path: /custom-llm/deregister
+      operations:
+      - name: deregister
+        method: POST
+        description: Convai Deregister Custom LLM
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          required: true
+    - name: custom-llm-list
+      path: /custom-llm/list
+      operations:
+      - name: list
+        method: POST
+        description: Convai List Custom LLMs
+    authentication:
+      type: apikey
+      key: CONVAI-API-KEY
+      value: '{{env.CONVAI_API_KEY}}'
+      placement: header
+  exposes:
+  - type: mcp
+    namespace: custom-llm-mcp
+    port: 9090
+    transport: http
+    tools:
+    - name: convai-register-llm
+      description: Register an OpenAI-compatible Custom LLM.
+      call: custom-llm-custom-llm.register
+      with: { body: tools.body }
+    - name: convai-update-llm
+      description: Update a registered Custom LLM.
+      call: custom-llm-custom-llm.update
+      with: { body: tools.body }
+    - name: convai-deregister-llm
+      description: Deregister a Custom LLM.
+      hints: { destructive: true, idempotent: true }
+      call: custom-llm-custom-llm.deregister
+      with: { body: tools.body }
+    - name: convai-list-llms
+      description: List registered Custom LLMs.
+      hints: { readOnly: true, idempotent: true }
+      call: custom-llm-custom-llm.list

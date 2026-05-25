@@ -1,0 +1,201 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Convai Narrative Design API — Narrative
+  description: 'Convai Narrative Design — sections and triggers for branching, scripted NPC experiences on top of
+    Convai conversational AI. 11 operations.'
+  tags:
+  - Convai
+  - Narrative
+  - Game Design
+  created: '2026-05-25'
+  modified: '2026-05-25'
+binds:
+- namespace: env
+  keys:
+    CONVAI_API_KEY: CONVAI_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: narrative-narrative
+    baseUri: https://api.convai.com
+    description: Convai Narrative Design business surface.
+    resources:
+    - name: narrative-toggle
+      path: /character/toggle-is-narrative-driven
+      operations:
+      - name: togglenarrative
+        method: POST
+        description: Convai Toggle Narrative Mode
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          required: true
+    - name: section-create
+      path: /character/narrative/create-section
+      operations:
+      - name: createsection
+        method: POST
+        description: Convai Create Narrative Section
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          required: true
+    - name: section-edit
+      path: /character/narrative/edit-section
+      operations:
+      - name: editsection
+        method: POST
+        description: Convai Edit Narrative Section
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          required: true
+    - name: section-get
+      path: /character/narrative/get-section
+      operations:
+      - name: getsection
+        method: POST
+        description: Convai Get Narrative Section
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          required: true
+    - name: section-list
+      path: /character/narrative/list-sections
+      operations:
+      - name: listsections
+        method: POST
+        description: Convai List Narrative Sections
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          required: true
+    - name: section-delete
+      path: /character/narrative/delete-section
+      operations:
+      - name: deletesection
+        method: POST
+        description: Convai Delete Narrative Section
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          required: true
+    - name: trigger-create
+      path: /character/narrative/create-trigger
+      operations:
+      - name: createtrigger
+        method: POST
+        description: Convai Create Narrative Trigger
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          required: true
+    - name: trigger-update
+      path: /character/narrative/update-trigger
+      operations:
+      - name: updatetrigger
+        method: POST
+        description: Convai Update Narrative Trigger
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          required: true
+    - name: trigger-get
+      path: /character/narrative/get-trigger
+      operations:
+      - name: gettrigger
+        method: POST
+        description: Convai Get Narrative Trigger
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          required: true
+    - name: trigger-list
+      path: /character/narrative/list-triggers
+      operations:
+      - name: listtriggers
+        method: POST
+        description: Convai List Narrative Triggers
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          required: true
+    - name: trigger-delete
+      path: /character/narrative/delete-trigger
+      operations:
+      - name: deletetrigger
+        method: POST
+        description: Convai Delete Narrative Trigger
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          required: true
+    authentication:
+      type: apikey
+      key: CONVAI-API-KEY
+      value: '{{env.CONVAI_API_KEY}}'
+      placement: header
+  exposes:
+  - type: mcp
+    namespace: narrative-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Convai Narrative Design.
+    tools:
+    - name: convai-toggle-narrative
+      description: Toggle whether a character is narrative-driven.
+      call: narrative-narrative.togglenarrative
+      with: { body: tools.body }
+    - name: convai-create-section
+      description: Create a narrative section.
+      call: narrative-narrative.createsection
+      with: { body: tools.body }
+    - name: convai-edit-section
+      description: Edit a narrative section.
+      call: narrative-narrative.editsection
+      with: { body: tools.body }
+    - name: convai-get-section
+      description: Get a narrative section.
+      call: narrative-narrative.getsection
+      with: { body: tools.body }
+    - name: convai-list-sections
+      description: List narrative sections.
+      call: narrative-narrative.listsections
+      with: { body: tools.body }
+    - name: convai-delete-section
+      description: Delete a narrative section.
+      hints: { destructive: true, idempotent: true }
+      call: narrative-narrative.deletesection
+      with: { body: tools.body }
+    - name: convai-create-trigger
+      description: Create a narrative trigger.
+      call: narrative-narrative.createtrigger
+      with: { body: tools.body }
+    - name: convai-update-trigger
+      description: Update a narrative trigger.
+      call: narrative-narrative.updatetrigger
+      with: { body: tools.body }
+    - name: convai-get-trigger
+      description: Get a narrative trigger.
+      call: narrative-narrative.gettrigger
+      with: { body: tools.body }
+    - name: convai-list-triggers
+      description: List narrative triggers.
+      call: narrative-narrative.listtriggers
+      with: { body: tools.body }
+    - name: convai-delete-trigger
+      description: Delete a narrative trigger.
+      hints: { destructive: true, idempotent: true }
+      call: narrative-narrative.deletetrigger
+      with: { body: tools.body }

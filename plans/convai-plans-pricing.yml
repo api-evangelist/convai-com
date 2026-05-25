@@ -1,0 +1,74 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: Convai
+providerId: convai-com
+created: '2026-05-25'
+modified: '2026-05-25'
+reconciled: false
+tags:
+  - AI
+  - Conversational AI
+  - NPCs
+  - Virtual Worlds
+description: |
+  Plans and feature tiers for the Convai conversational AI platform. Tier
+  feature availability documented in the Core API Reference (Knowledge Bank
+  and Custom LLM require Enterprise; Chat History requires Scale; Evaluation
+  requires Professional). Per-tier interaction quotas and exact monthly prices
+  are published on convai.com/pricing; the price fields below should be
+  reconciled directly against the live pricing page before relying on them
+  for billing decisions.
+sources:
+  - https://convai.com/pricing
+  - https://docs.convai.com/api-docs/api-reference/core-api-reference
+plans:
+  - id: convai-free
+    name: Free
+    type: free
+    description: Trial / hobbyist tier with limited monthly interactions and access to the playground.
+    features:
+      - Convai Playground access
+      - Character creation
+      - Limited monthly interactions
+      - Unity, Unreal, and Web plugins
+    entries: []
+  - id: convai-indie
+    name: Indie
+    type: subscription
+    description: Single-seat tier for indie developers shipping games and prototypes.
+    features:
+      - Higher monthly interaction quota
+      - Unity and Unreal plugins
+      - Email support
+    entries: []
+  - id: convai-professional
+    name: Professional
+    type: subscription
+    description: Team tier with larger interaction quotas, multi-seat access, and the Evaluation API.
+    features:
+      - Increased monthly interaction quota
+      - Evaluation API access
+      - Multi-seat collaboration
+      - Forum and email support
+    entries: []
+  - id: convai-scale
+    name: Scale
+    type: subscription
+    description: Production tier for live games and apps with the Chat History API and elevated quotas.
+    features:
+      - Chat History API access
+      - Higher concurrency and quotas
+      - Priority support
+    entries: []
+  - id: convai-enterprise
+    name: Enterprise
+    type: contract
+    description: Custom-priced enterprise tier with Knowledge Bank, Custom LLM, on-prem and dedicated options.
+    features:
+      - Knowledge Bank API
+      - Custom LLM (BYO OpenAI-compatible model)
+      - Text-to-Speech API
+      - SLA and dedicated support
+      - Custom commercial terms
+    entries: []
