@@ -1,163 +1,275 @@
 # Convai (convai-com)
 
-Convai is a conversational AI platform for embodied 3D characters in games, virtual worlds, simulations, and immersive web experiences. Its REST and WebRTC APIs power NPCs that perceive (vision and audio), reason (with optional custom LLMs and a Knowledge Bank for retrieval-augmented context), speak (500+ voices, 65+ languages), animate (lip-sync and facial expressions), and follow narrative-driven story logic via sections and triggers. First-party SDKs ship for Unreal Engine, Unity, Web (React and Vanilla TS), and PlayCanvas, with integrations for Roblox, Discord, and NVIDIA Omniverse.
+**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/convai-com/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/convai-com/refs/heads/main/apis.yml)
 
-**URL:** [Visit APIs.yml](https://raw.githubusercontent.com/api-evangelist/convai-com/refs/heads/main/apis.yml)
+## Scope
 
-**Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=company-api-evangelist&utm_content=repo)
+- **Type:** Index
+- **Access:** 3rd-Party
 
 ## Tags
 
- - AI, Conversational AI, Characters, NPCs, Virtual Worlds, Games, Avatars, Speech, TTS, WebRTC
+- AI
+- Conversational AI
+- Characters
+- NPCs
+- Virtual Worlds
+- Games
+- Avatars
+- Speech
+- TTS
+- WebRTC
 
 ## Timestamps
 
 - **Created:** 2026-05-25
 - **Modified:** 2026-05-25
 
-## Score
-
-- **Rank:** Tier-1
-- **Rationale:** Real REST API at `api.convai.com` with documented endpoints across characters, interaction, knowledge bank, narrative design, TTS, chat history, custom LLM, and evaluation; WebSocket streaming transcription at `transcribe.convai.com`; beta WebRTC Live API at `live.convai.com`; first-party SDKs for Unreal Engine, Unity, Web, PlayCanvas, with integrations for Roblox, Discord, and NVIDIA Omniverse; published forum, pricing tiers, and GitHub org under [Conv-AI](https://github.com/Conv-AI).
-
 ## APIs
 
 ### Convai Character API
-Create, list, update, clone, and delete Convai characters. Each character is a reusable agent with backstory, voice, language, personality, knowledge bank, and narrative configuration.
 
-**Human URL:** [https://docs.convai.com/api-docs/api-reference/core-api-reference](https://docs.convai.com/api-docs/api-reference/core-api-reference)
+Create, list, update, clone, and delete Convai conversational AI characters. Each character is a reusable conversational agent with backstory, voice, language, personality, knowledge bank, and narrative design configuration that can be embodied in games and virtual worlds via the Unity, Unreal, Web, and other Convai SDKs.
 
-- [OpenAPI](openapi/convai-character-api-openapi.yml)
-- [JSON Schema — Character](json-schema/convai-character-schema.json)
-- [JSON-LD](json-ld/convai-context.jsonld)
-- [Naftiko Capability — Characters](capabilities/characters-characters.yaml)
+- **Human URL:** [https://docs.convai.com/api-docs/api-reference/core-api-reference](https://docs.convai.com/api-docs/api-reference/core-api-reference)
+
+#### Tags
+
+- AI
+- Conversational AI
+- Characters
+- NPCs
+
+#### Properties
+
+- [Documentation](https://docs.convai.com/api-docs/api-reference/core-api-reference)
+- [OpenAPI](openapi/convai-character-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Postman Collection](collections/convai-character-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/convai-character-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [JSON Schema](json-schema/convai-character-schema.json) — [JSON Schema](https://json-schema.org/specification)
+- [JSON-LD](json-ld/convai-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
 
 ### Convai Interaction API
-The runtime conversational endpoint (`POST /character/getResponse`) that powers in-game NPC dialogue. Returns text, base64 audio, action triggers, emotion state, and narrative section data.
 
-- [OpenAPI](openapi/convai-interaction-api-openapi.yml)
-- [JSON Schema — Interaction](json-schema/convai-interaction-schema.json)
-- [Naftiko Capability — Get Response](capabilities/interaction-getresponse.yaml)
+Runtime conversational endpoint that powers in-game NPC dialogue. Send user text or audio plus a session and character ID and receive the character's text reply, base64 audio, action triggers, emotion state, and narrative section data. The single most-called endpoint in the Convai stack.
+
+- **Human URL:** [https://docs.convai.com/api-docs/api-reference/core-api-reference](https://docs.convai.com/api-docs/api-reference/core-api-reference)
+
+#### Tags
+
+- AI
+- Conversational AI
+- Characters
+- Interaction
+- NPCs
+
+#### Properties
+
+- [Documentation](https://docs.convai.com/api-docs/api-reference/core-api-reference)
+- [OpenAPI](openapi/convai-interaction-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Postman Collection](collections/convai-interaction-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/convai-interaction-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [JSON Schema](json-schema/convai-interaction-schema.json) — [JSON Schema](https://json-schema.org/specification)
 
 ### Convai Knowledge Bank API
-Upload, update, list, and delete RAG documents attached to characters. Enterprise tier.
 
-- [OpenAPI](openapi/convai-knowledge-bank-api-openapi.yml)
-- [Naftiko Capability — Knowledge Bank](capabilities/knowledge-bank-knowledge-bank.yaml)
+Upload, update, list, and delete RAG documents attached to characters so they can reference custom knowledge during conversations. Enterprise tier.
+
+- **Human URL:** [https://docs.convai.com/api-docs/api-reference/core-api-reference](https://docs.convai.com/api-docs/api-reference/core-api-reference)
+
+#### Tags
+
+- AI
+- Conversational AI
+- Knowledge Bank
+- RAG
+
+#### Properties
+
+- [Documentation](https://docs.convai.com/api-docs/api-reference/core-api-reference)
+- [OpenAPI](openapi/convai-knowledge-bank-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Postman Collection](collections/convai-knowledge-bank-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/convai-knowledge-bank-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
 
 ### Convai Text-to-Speech API
-Synthesize speech from text across 500+ voices and 65+ languages. Enterprise tier.
 
-- [OpenAPI](openapi/convai-tts-api-openapi.yml)
-- [Naftiko Capability — TTS](capabilities/tts-tts.yaml)
+Synthesize speech from text using Convai's catalog of 500+ voices across 65+ languages. Returns audio bytes for use in games, virtual worlds, and accessibility flows. Enterprise tier.
+
+- **Human URL:** [https://docs.convai.com/api-docs/api-reference/core-api-reference](https://docs.convai.com/api-docs/api-reference/core-api-reference)
+
+#### Tags
+
+- AI
+- Speech
+- TTS
+- Voice
+
+#### Properties
+
+- [Documentation](https://docs.convai.com/api-docs/api-reference/core-api-reference)
+- [OpenAPI](openapi/convai-tts-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Postman Collection](collections/convai-tts-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/convai-tts-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
 
 ### Convai Narrative Design API
-Sections (story beats with objectives) and triggers (conditions that move between sections) for branching, scripted NPC experiences.
 
-- [OpenAPI](openapi/convai-narrative-design-api-openapi.yml)
-- [Naftiko Capability — Narrative](capabilities/narrative-narrative.yaml)
+Configure narrative-driven characters with sections (discrete story beats with objectives) and triggers (conditions that move the character between sections). Backs branching, scripted game experiences on top of Convai's conversational AI.
+
+- **Human URL:** [https://docs.convai.com/api-docs/api-reference/core-api-reference](https://docs.convai.com/api-docs/api-reference/core-api-reference)
+
+#### Tags
+
+- AI
+- Conversational AI
+- Narrative
+- Game Design
+
+#### Properties
+
+- [Documentation](https://docs.convai.com/api-docs/api-reference/core-api-reference)
+- [OpenAPI](openapi/convai-narrative-design-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Postman Collection](collections/convai-narrative-design-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/convai-narrative-design-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
 
 ### Convai Chat History API
-List sessions and fetch session transcripts for analytics, debugging, and auditing. Scale tier and above.
 
-- [OpenAPI](openapi/convai-chat-history-api-openapi.yml)
-- [Naftiko Capability — Chat History](capabilities/chat-history-chat-history.yaml)
+List a character's sessions and fetch full session transcripts for analytics, debugging, evaluation, and auditing of NPC conversations. Scale tier and above.
+
+- **Human URL:** [https://docs.convai.com/api-docs/api-reference/core-api-reference](https://docs.convai.com/api-docs/api-reference/core-api-reference)
+
+#### Tags
+
+- AI
+- Conversational AI
+- Chat History
+- Analytics
+
+#### Properties
+
+- [Documentation](https://docs.convai.com/api-docs/api-reference/core-api-reference)
+- [OpenAPI](openapi/convai-chat-history-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Postman Collection](collections/convai-chat-history-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/convai-chat-history-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
 
 ### Convai Custom LLM API
-Register OpenAI-compatible custom LLM endpoints as the reasoning backbone for characters. Enterprise tier.
 
-- [OpenAPI](openapi/convai-custom-llm-api-openapi.yml)
-- [Naftiko Capability — Custom LLM](capabilities/custom-llm-custom-llm.yaml)
+Register, update, deregister, and list OpenAI-compatible custom LLM endpoints to use as the reasoning backbone for Convai characters. Lets Enterprise customers route character responses through their own model deployments. Enterprise tier.
+
+- **Human URL:** [https://docs.convai.com/api-docs/api-reference/core-api-reference](https://docs.convai.com/api-docs/api-reference/core-api-reference)
+
+#### Tags
+
+- AI
+- Conversational AI
+- LLM
+- BYO Model
+
+#### Properties
+
+- [Documentation](https://docs.convai.com/api-docs/api-reference/core-api-reference)
+- [OpenAPI](openapi/convai-custom-llm-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Postman Collection](collections/convai-custom-llm-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/convai-custom-llm-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
 
 ### Convai Evaluation API
-Score session transcripts against a custom rubric. Professional tier and above.
 
-- [OpenAPI](openapi/convai-evaluation-api-openapi.yml)
-- [Naftiko Capability — Evaluation](capabilities/evaluation-evaluation.yaml)
+Score and evaluate Convai character sessions against a custom prompt and rubric variables. Used to measure NPC quality, role fidelity, safety, and objective completion. Professional tier and above.
+
+- **Human URL:** [https://docs.convai.com/api-docs/api-reference/core-api-reference](https://docs.convai.com/api-docs/api-reference/core-api-reference)
+
+#### Tags
+
+- AI
+- Conversational AI
+- Evaluation
+- Quality
+
+#### Properties
+
+- [Documentation](https://docs.convai.com/api-docs/api-reference/core-api-reference)
+- [OpenAPI](openapi/convai-evaluation-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Postman Collection](collections/convai-evaluation-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/convai-evaluation-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
 
 ### Convai Streaming Transcription API
-Real-time speech-to-text over WebSocket at `wss://transcribe.convai.com/stream`. Stream 16-bit PCM, mono, 16 kHz audio.
 
-- [OpenAPI](openapi/convai-streaming-transcription-api-openapi.yml)
+Real-time speech-to-text over WebSocket (wss://transcribe.convai.com/stream). Stream 16-bit PCM, mono, 16 kHz audio and receive incremental transcripts. Used by the Convai plugins to drive low-latency voice input from players.
 
-### Convai Live API (Beta)
-Ultra-low-latency, fully duplex character sessions over WebRTC. `POST https://live.convai.com/connect` to establish a session; audio and events flow over data channels (RTVI message format).
+- **Human URL:** [https://docs.convai.com/api-docs/api-reference/core-api-reference](https://docs.convai.com/api-docs/api-reference/core-api-reference)
 
-- [OpenAPI](openapi/convai-live-api-openapi.yml)
+#### Tags
+
+- AI
+- Speech
+- Transcription
+- Streaming
+- WebSocket
+
+#### Properties
+
+- [Documentation](https://docs.convai.com/api-docs/api-reference/core-api-reference)
+- [OpenAPI](openapi/convai-streaming-transcription-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Postman Collection](collections/convai-streaming-transcription-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/convai-streaming-transcription-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+
+### Convai Live API
+
+Beta Live API for ultra-low-latency, fully duplex character sessions over WebRTC. POST /connect at live.convai.com to establish a session; subsequent audio and event messages flow over WebRTC data channels (RTVI message format) and media tracks. Authenticated via X-API-Key.
+
+- **Human URL:** [https://docs.convai.com/api-docs/api-reference/live-api-reference](https://docs.convai.com/api-docs/api-reference/live-api-reference)
+
+#### Tags
+
+- AI
+- Conversational AI
+- Live
+- WebRTC
+- Beta
+
+#### Properties
+
+- [Documentation](https://docs.convai.com/api-docs/api-reference/live-api-reference)
+- [OpenAPI](openapi/convai-live-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Postman Collection](collections/convai-live-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/convai-live-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
 
 ## Common Properties
 
-- [Portal — convai.com](https://convai.com)
-- [Sandbox — Convai Playground](https://convai.com/playground)
-- [Documentation — docs.convai.com](https://docs.convai.com)
-- [Documentation — API Reference](https://docs.convai.com/api-docs/api-reference/core-api-reference)
+- [Portal](https://convai.com)
+- [Sandbox](https://convai.com/playground)
+- [Documentation](https://docs.convai.com)
+- [Documentation](https://docs.convai.com/api-docs/welcome)
+- [Documentation](https://docs.convai.com/api-docs/api-reference/core-api-reference)
 - [Pricing](https://convai.com/pricing)
-- [GitHubOrganization — Conv-AI](https://github.com/Conv-AI)
-- [Forum — Convai Developer Forum](https://forum.convai.com)
+- [GitHub Organization](https://github.com/Conv-AI)
+- [Forum](https://forum.convai.com)
 - [Blog](https://convai.com/blog)
 - [About](https://convai.com/about)
-- [ContactSales](https://convai.com/contact-sales)
-- [TermsOfService](https://convai.com/terms-of-service)
-- [PrivacyPolicy](https://convai.com/privacy-policy)
-- [SDK — Unreal Engine V4](https://github.com/Conv-AI/Convai-UnrealEngine-SDK-V4)
-- [SDK — Unreal Engine (Legacy)](https://github.com/Conv-AI/Convai-UnrealEngine-SDK)
-- [SDK — Web (Legacy)](https://github.com/Conv-AI/Convai-Web-SDK-Old)
-- [SDK — JavaScript (Alpha, archived)](https://github.com/Conv-AI/Convai-JS-SDK-Alpha)
-- [Plugin — Unity](https://docs.convai.com/api-docs/plugins-and-integrations/unity-plugin)
-- [Plugin — Unreal Engine](https://docs.convai.com/api-docs/plugins-and-integrations/unreal-engine-plugin)
-- [Plugin — Web SDK](https://docs.convai.com/api-docs/plugins-and-integrations/web-plugin)
-- [Plugin — PlayCanvas](https://docs.convai.com/api-docs/plugins-and-integrations/playcanvas-plugin)
-- [Plugin — Roblox](https://docs.convai.com/api-docs/plugins-and-integrations/roblox)
-- [Plugin — Discord Bot](https://docs.convai.com/api-docs/plugins-and-integrations/discord)
-- [Plugin — NVIDIA Omniverse](https://docs.convai.com/api-docs/plugins-and-integrations/omniverse)
-- [Plugin — Pixel Streaming Embed](https://docs.convai.com/api-docs/plugins-and-integrations/pixel-streaming)
-- [Tool — Analytics (MCP server, SDKs, CLI)](https://github.com/Conv-AI/convai-analytics)
-- [Tool — Evaluation Toolkit](https://github.com/Conv-AI/convai-evals)
-- [Tool — Unreal Modding Tool](https://github.com/Conv-AI/Convai-UnrealEngine-ModdingTool)
-- [Tool — Unreal Pak Manager](https://github.com/Conv-AI/Convai-UnrealEngine-PakManager)
-- [API Commons Plans](plans/convai-plans-pricing.yml)
-- [API Commons Rate Limits](rate-limits/convai-rate-limits.yml)
-- [FinOps](finops/convai-finops.yml)
+- [Contact Sales](https://convai.com/contact-sales)
+- [Terms of Service](https://convai.com/terms-of-service)
+- [Privacy Policy](https://convai.com/privacy-policy)
+- [SDK](https://github.com/Conv-AI/Convai-UnrealEngine-SDK-V4)
+- [SDK](https://github.com/Conv-AI/Convai-UnrealEngine-SDK)
+- [SDK](https://github.com/Conv-AI/Convai-Web-SDK-Old)
+- [SDK](https://github.com/Conv-AI/Convai-JS-SDK-Alpha)
+- [Integration](https://docs.convai.com/api-docs/plugins-and-integrations/unity-plugin)
+- [Integration](https://docs.convai.com/api-docs/plugins-and-integrations/unreal-engine-plugin)
+- [Integration](https://docs.convai.com/api-docs/plugins-and-integrations/web-plugin)
+- [Integration](https://docs.convai.com/api-docs/plugins-and-integrations/playcanvas-plugin)
+- [Integration](https://docs.convai.com/api-docs/plugins-and-integrations/roblox)
+- [Integration](https://docs.convai.com/api-docs/plugins-and-integrations/discord)
+- [Integration](https://docs.convai.com/api-docs/plugins-and-integrations/omniverse)
+- [Integration](https://docs.convai.com/api-docs/plugins-and-integrations/pixel-streaming)
+- [Tools](https://github.com/Conv-AI/convai-analytics)
+- [Tools](https://github.com/Conv-AI/convai-evals)
+- [Tools](https://github.com/Conv-AI/Convai-UnrealEngine-ModdingTool)
+- [Tools](https://github.com/Conv-AI/Convai-UnrealEngine-PakManager)
+- [Pricing](plans/convai-plans-pricing.yml)
+- [Rate Limits](rate-limits/convai-rate-limits.yml)
+- [Fin Ops](finops/convai-finops.yml)
 
-## Artifacts
+## Maintainers
 
-Machine-readable API specifications organized by format.
-
-### OpenAPI
-
-- [Convai Character API](openapi/convai-character-api-openapi.yml)
-- [Convai Interaction API](openapi/convai-interaction-api-openapi.yml)
-- [Convai Knowledge Bank API](openapi/convai-knowledge-bank-api-openapi.yml)
-- [Convai Text-to-Speech API](openapi/convai-tts-api-openapi.yml)
-- [Convai Narrative Design API](openapi/convai-narrative-design-api-openapi.yml)
-- [Convai Chat History API](openapi/convai-chat-history-api-openapi.yml)
-- [Convai Custom LLM API](openapi/convai-custom-llm-api-openapi.yml)
-- [Convai Evaluation API](openapi/convai-evaluation-api-openapi.yml)
-- [Convai Streaming Transcription API](openapi/convai-streaming-transcription-api-openapi.yml)
-- [Convai Live API (Beta)](openapi/convai-live-api-openapi.yml)
-
-### JSON Schema
-
-- [Convai Character](json-schema/convai-character-schema.json)
-- [Convai Interaction](json-schema/convai-interaction-schema.json)
-
-### JSON-LD
-
-- [Convai Context](json-ld/convai-context.jsonld)
-
-### Naftiko Capabilities
-
-- [Characters](capabilities/characters-characters.yaml)
-- [Interaction — Get Response](capabilities/interaction-getresponse.yaml)
-- [Knowledge Bank](capabilities/knowledge-bank-knowledge-bank.yaml)
-- [TTS](capabilities/tts-tts.yaml)
-- [Narrative](capabilities/narrative-narrative.yaml)
-- [Chat History](capabilities/chat-history-chat-history.yaml)
-- [Custom LLM](capabilities/custom-llm-custom-llm.yaml)
-- [Evaluation](capabilities/evaluation-evaluation.yaml)
-
-### Plans, Rate Limits, FinOps
-
-- [API Commons Plans](plans/convai-plans-pricing.yml)
-- [API Commons Rate Limits](rate-limits/convai-rate-limits.yml)
-- [FinOps](finops/convai-finops.yml)
+**FN:** Kin Lane
+**Email:** info@apievangelist.com
+**URL:** https://apievangelist.com
