@@ -1,0 +1,63 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Convai Text-to-Speech API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "CONVAI-API-KEY",
+      "value": "{{CONVAI-API-KEY}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "TTS",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Synthesize Speech",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.convai.com/tts",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Synthesize Speech"
+        },
+        {
+          "info": {
+            "name": "List Available Voices",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.convai.com/tts/get_available_voices"
+          },
+          "docs": "List Available Voices"
+        },
+        {
+          "info": {
+            "name": "List Available Languages",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.convai.com/tts/get_available_languages"
+          },
+          "docs": "List Available Languages"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

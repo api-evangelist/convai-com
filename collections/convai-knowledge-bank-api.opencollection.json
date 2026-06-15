@@ -1,0 +1,102 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Convai Knowledge Bank API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "CONVAI-API-KEY",
+      "value": "{{CONVAI-API-KEY}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Knowledge Bank",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Upload Knowledge Bank Document",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.convai.com/character/knowledge-bank/upload",
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "file_name",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "file",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "character_id",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Upload Knowledge Bank Document"
+        },
+        {
+          "info": {
+            "name": "Update Knowledge Bank Document",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.convai.com/character/knowledge-bank/update",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update Knowledge Bank Document"
+        },
+        {
+          "info": {
+            "name": "List Knowledge Bank Documents",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.convai.com/character/knowledge-bank/list",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "List Knowledge Bank Documents"
+        },
+        {
+          "info": {
+            "name": "Delete Knowledge Bank Document",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.convai.com/character/knowledge-bank/delete",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Delete Knowledge Bank Document"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

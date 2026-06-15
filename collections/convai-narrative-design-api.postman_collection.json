@@ -1,0 +1,1107 @@
+{
+  "item": [
+    {
+      "id": "d6bdd745-c3dd-4935-8726-66074bbc1ea8",
+      "name": "Narrative",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "244bcefc-e348-43ad-8a67-508638b58b08",
+          "name": "Toggle Narrative Mode",
+          "request": {
+            "name": "Toggle Narrative Mode",
+            "description": {},
+            "url": {
+              "path": [
+                "character",
+                "toggle-is-narrative-driven"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"character_id\": \"<string>\",\n  \"is_narrative_driven\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c6b05798-e072-41c3-ad93-37f03bb59129",
+              "name": "Updated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "character",
+                    "toggle-is-narrative-driven"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "CONVAI-API-KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"character_id\": \"<string>\",\n  \"is_narrative_driven\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "24133ae3-128c-4f73-9a2c-f6879a6911c1",
+          "name": "Create Narrative Section",
+          "request": {
+            "name": "Create Narrative Section",
+            "description": {},
+            "url": {
+              "path": [
+                "character",
+                "narrative",
+                "create-section"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"character_id\": \"<string>\",\n  \"section_name\": \"<string>\",\n  \"objective\": \"<string>\",\n  \"section_id\": \"<string>\",\n  \"behavior_tree_code\": \"<string>\",\n  \"updates_player_persona\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "cb1158b8-791a-4ae9-96a8-d014a1fb2320",
+              "name": "Section created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "character",
+                    "narrative",
+                    "create-section"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "CONVAI-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"character_id\": \"<string>\",\n  \"section_name\": \"<string>\",\n  \"objective\": \"<string>\",\n  \"section_id\": \"<string>\",\n  \"behavior_tree_code\": \"<string>\",\n  \"updates_player_persona\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"section_id\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0ffa9ead-1fb9-443a-b982-c9656ab97634",
+          "name": "Edit Narrative Section",
+          "request": {
+            "name": "Edit Narrative Section",
+            "description": {},
+            "url": {
+              "path": [
+                "character",
+                "narrative",
+                "edit-section"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"character_id\": \"<string>\",\n  \"section_name\": \"<string>\",\n  \"objective\": \"<string>\",\n  \"section_id\": \"<string>\",\n  \"behavior_tree_code\": \"<string>\",\n  \"updates_player_persona\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6e0b3a08-53d7-4785-b253-b87ef6250d3e",
+              "name": "Section updated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "character",
+                    "narrative",
+                    "edit-section"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "CONVAI-API-KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"character_id\": \"<string>\",\n  \"section_name\": \"<string>\",\n  \"objective\": \"<string>\",\n  \"section_id\": \"<string>\",\n  \"behavior_tree_code\": \"<string>\",\n  \"updates_player_persona\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ef5a27cc-a874-4a5c-9456-5cccb5e11bae",
+          "name": "Get Narrative Section",
+          "request": {
+            "name": "Get Narrative Section",
+            "description": {},
+            "url": {
+              "path": [
+                "character",
+                "narrative",
+                "get-section"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"character_id\": \"<string>\",\n  \"section_id\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b1685389-3487-4da6-aad1-77cc375d2b25",
+              "name": "Section",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "character",
+                    "narrative",
+                    "get-section"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "CONVAI-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"character_id\": \"<string>\",\n  \"section_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"character_id\": \"string\",\n  \"section_name\": \"string\",\n  \"objective\": \"string\",\n  \"section_id\": \"string\",\n  \"behavior_tree_code\": \"string\",\n  \"updates_player_persona\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0622b20d-bfec-47e8-b3d0-c76064834052",
+          "name": "List Narrative Sections",
+          "request": {
+            "name": "List Narrative Sections",
+            "description": {},
+            "url": {
+              "path": [
+                "character",
+                "narrative",
+                "list-sections"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"character_id\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "75e4a548-a462-4a11-b873-65fb31fd4ec9",
+              "name": "Section list",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "character",
+                    "narrative",
+                    "list-sections"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "CONVAI-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"character_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"character_id\": \"string\",\n    \"section_name\": \"string\",\n    \"objective\": \"string\",\n    \"section_id\": \"string\",\n    \"behavior_tree_code\": \"string\",\n    \"updates_player_persona\": true\n  },\n  {\n    \"character_id\": \"string\",\n    \"section_name\": \"string\",\n    \"objective\": \"string\",\n    \"section_id\": \"string\",\n    \"behavior_tree_code\": \"string\",\n    \"updates_player_persona\": true\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5a70fc71-f123-4f26-9df7-c36f9e23e6a1",
+          "name": "Delete Narrative Section",
+          "request": {
+            "name": "Delete Narrative Section",
+            "description": {},
+            "url": {
+              "path": [
+                "character",
+                "narrative",
+                "delete-section"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"character_id\": \"<string>\",\n  \"section_id\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "aa1b1046-f026-4011-8347-14112c32965f",
+              "name": "Section deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "character",
+                    "narrative",
+                    "delete-section"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "CONVAI-API-KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"character_id\": \"<string>\",\n  \"section_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "af4c3e68-9431-4e16-bcb8-3e31bf50ae15",
+          "name": "Create Narrative Trigger",
+          "request": {
+            "name": "Create Narrative Trigger",
+            "description": {},
+            "url": {
+              "path": [
+                "character",
+                "narrative",
+                "create-trigger"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"character_id\": \"<string>\",\n  \"trigger_name\": \"<string>\",\n  \"trigger_id\": \"<string>\",\n  \"trigger_message\": \"<string>\",\n  \"destination_section\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "70cd3986-3179-49bb-b3ff-22b3f1bfa92c",
+              "name": "Trigger created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "character",
+                    "narrative",
+                    "create-trigger"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "CONVAI-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"character_id\": \"<string>\",\n  \"trigger_name\": \"<string>\",\n  \"trigger_id\": \"<string>\",\n  \"trigger_message\": \"<string>\",\n  \"destination_section\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"trigger_id\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "86fed7c5-ff9f-42b3-815a-320b5ee5982d",
+          "name": "Update Narrative Trigger",
+          "request": {
+            "name": "Update Narrative Trigger",
+            "description": {},
+            "url": {
+              "path": [
+                "character",
+                "narrative",
+                "update-trigger"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"character_id\": \"<string>\",\n  \"trigger_name\": \"<string>\",\n  \"trigger_id\": \"<string>\",\n  \"trigger_message\": \"<string>\",\n  \"destination_section\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "8e312a17-e4b0-402a-91c8-10edfe3317da",
+              "name": "Trigger updated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "character",
+                    "narrative",
+                    "update-trigger"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "CONVAI-API-KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"character_id\": \"<string>\",\n  \"trigger_name\": \"<string>\",\n  \"trigger_id\": \"<string>\",\n  \"trigger_message\": \"<string>\",\n  \"destination_section\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f4794980-ea5c-42cf-87c3-ec836edc2b93",
+          "name": "Get Narrative Trigger",
+          "request": {
+            "name": "Get Narrative Trigger",
+            "description": {},
+            "url": {
+              "path": [
+                "character",
+                "narrative",
+                "get-trigger"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"character_id\": \"<string>\",\n  \"trigger_id\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a2ce0909-dac3-48fe-b053-39fab2423cba",
+              "name": "Trigger",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "character",
+                    "narrative",
+                    "get-trigger"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "CONVAI-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"character_id\": \"<string>\",\n  \"trigger_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"character_id\": \"string\",\n  \"trigger_name\": \"string\",\n  \"trigger_id\": \"string\",\n  \"trigger_message\": \"string\",\n  \"destination_section\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d2f758dc-6b27-4e5f-a227-e11f0a21ba13",
+          "name": "List Narrative Triggers",
+          "request": {
+            "name": "List Narrative Triggers",
+            "description": {},
+            "url": {
+              "path": [
+                "character",
+                "narrative",
+                "list-triggers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"character_id\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "fb2b3ff2-4705-4c5c-8baf-c45fdf63ea01",
+              "name": "Trigger list",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "character",
+                    "narrative",
+                    "list-triggers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "CONVAI-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"character_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"character_id\": \"string\",\n    \"trigger_name\": \"string\",\n    \"trigger_id\": \"string\",\n    \"trigger_message\": \"string\",\n    \"destination_section\": \"string\"\n  },\n  {\n    \"character_id\": \"string\",\n    \"trigger_name\": \"string\",\n    \"trigger_id\": \"string\",\n    \"trigger_message\": \"string\",\n    \"destination_section\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "50dd623a-8602-4151-9f72-230a6fc39911",
+          "name": "Delete Narrative Trigger",
+          "request": {
+            "name": "Delete Narrative Trigger",
+            "description": {},
+            "url": {
+              "path": [
+                "character",
+                "narrative",
+                "delete-trigger"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"character_id\": \"<string>\",\n  \"trigger_id\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "745f98ae-70b3-44f6-842d-ee9fd2927546",
+              "name": "Trigger deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "character",
+                    "narrative",
+                    "delete-trigger"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "CONVAI-API-KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"character_id\": \"<string>\",\n  \"trigger_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.convai.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "CONVAI-API-KEY"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "b17b2f4b-1447-492a-8baf-acfd2c7a9dc7",
+    "name": "Convai Narrative Design API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Configure narrative-driven characters using sections and triggers. Sections\ndefine discrete narrative beats; triggers move the character between\nsections based on conditions. Used to build branching, scripted experiences\non top of Convai's conversational AI.\n",
+      "type": "text/plain"
+    }
+  }
+}

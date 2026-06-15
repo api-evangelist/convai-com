@@ -1,0 +1,147 @@
+{
+  "item": [
+    {
+      "id": "48d679aa-39a2-4c63-a653-cce3ea260f62",
+      "name": "Evaluation",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3a4dace1-f9b8-439a-aeb4-0b9b33c1efe4",
+          "name": "Evaluate Session",
+          "request": {
+            "name": "Evaluate Session",
+            "description": {},
+            "url": {
+              "path": [
+                "evaluation",
+                "evaluate-session"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"session_id\": \"<string>\",\n  \"character_id\": \"<string>\",\n  \"prompt\": \"<string>\",\n  \"variables\": {\n    \"key_0\": \"string\",\n    \"key_1\": 4743\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "864e2b9a-9180-4e57-b254-821b6173e5dc",
+              "name": "Evaluation result",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "evaluation",
+                    "evaluate-session"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "CONVAI-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"session_id\": \"<string>\",\n  \"character_id\": \"<string>\",\n  \"prompt\": \"<string>\",\n  \"variables\": {\n    \"key_0\": \"string\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"score\": 27.547204678128878,\n  \"reasoning\": \"string\",\n  \"variables\": {\n    \"key_0\": 5450.040398112458,\n    \"key_1\": \"string\",\n    \"key_2\": 76.69748332190807,\n    \"key_3\": 8061\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.convai.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "CONVAI-API-KEY"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "1842922c-dca3-487f-a172-f130f19f48d4",
+    "name": "Convai Evaluation API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Score and evaluate Convai character sessions against custom prompts and\nrubric variables. Used to measure NPC quality, role-fidelity, safety, and\nobjective completion. Professional tier and above.\n",
+      "type": "text/plain"
+    }
+  }
+}

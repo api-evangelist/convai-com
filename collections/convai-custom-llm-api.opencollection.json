@@ -1,0 +1,82 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Convai Custom LLM API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "CONVAI-API-KEY",
+      "value": "{{CONVAI-API-KEY}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Custom LLM",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Register Custom LLM",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.convai.com/custom-llm/register",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Register Custom LLM"
+        },
+        {
+          "info": {
+            "name": "Update Custom LLM",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.convai.com/custom-llm/update",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update Custom LLM"
+        },
+        {
+          "info": {
+            "name": "Deregister Custom LLM",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.convai.com/custom-llm/deregister",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Deregister Custom LLM"
+        },
+        {
+          "info": {
+            "name": "List Custom LLMs",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.convai.com/custom-llm/list"
+          },
+          "docs": "List Custom LLMs"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
