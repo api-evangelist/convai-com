@@ -215,7 +215,7 @@ common:
     type: GitHubOrganization
   - url: https://forum.convai.com
     name: Convai Developer Forum
-    type: Forum
+    type: Forums
   - url: https://convai.com/blog
     name: Blog
     type: Blog
@@ -233,40 +233,40 @@ common:
     type: PrivacyPolicy
   - url: https://github.com/Conv-AI/Convai-UnrealEngine-SDK-V4
     name: SDK — Unreal Engine (V4)
-    type: SDK
+    type: SDKs
   - url: https://github.com/Conv-AI/Convai-UnrealEngine-SDK
     name: SDK — Unreal Engine (Legacy)
-    type: SDK
+    type: SDKs
   - url: https://github.com/Conv-AI/Convai-Web-SDK-Old
     name: SDK — Web (Legacy)
-    type: SDK
+    type: SDKs
   - url: https://github.com/Conv-AI/Convai-JS-SDK-Alpha
     name: SDK — JavaScript (Alpha, archived)
-    type: SDK
+    type: SDKs
   - url: https://docs.convai.com/api-docs/plugins-and-integrations/unity-plugin
     name: Plugin — Unity
-    type: Integration
+    type: Integrations
   - url: https://docs.convai.com/api-docs/plugins-and-integrations/unreal-engine-plugin
     name: Plugin — Unreal Engine
-    type: Integration
+    type: Integrations
   - url: https://docs.convai.com/api-docs/plugins-and-integrations/web-plugin
     name: Plugin — Web SDK (React and Vanilla TS)
-    type: Integration
+    type: Integrations
   - url: https://docs.convai.com/api-docs/plugins-and-integrations/playcanvas-plugin
     name: Plugin — PlayCanvas
-    type: Integration
+    type: Integrations
   - url: https://docs.convai.com/api-docs/plugins-and-integrations/roblox
     name: Plugin — Roblox
-    type: Integration
+    type: Integrations
   - url: https://docs.convai.com/api-docs/plugins-and-integrations/discord
     name: Plugin — Discord Bot
-    type: Integration
+    type: Integrations
   - url: https://docs.convai.com/api-docs/plugins-and-integrations/omniverse
     name: Plugin — NVIDIA Omniverse
-    type: Integration
+    type: Integrations
   - url: https://docs.convai.com/api-docs/plugins-and-integrations/pixel-streaming
     name: Plugin — Pixel Streaming Embed
-    type: Integration
+    type: Integrations
   - url: https://github.com/Conv-AI/convai-analytics
     name: Tool — Analytics (MCP server, SDKs, CLI)
     type: Tools
