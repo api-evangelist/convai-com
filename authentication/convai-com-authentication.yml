@@ -1,0 +1,32 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/convai-character-api-openapi.yml, openapi/convai-chat-history-api-openapi.yml,
+  openapi/convai-custom-llm-api-openapi.yml, openapi/convai-evaluation-api-openapi.yml, openapi/convai-interaction-api-openapi.yml,
+  openapi/convai-knowledge-bank-api-openapi.yml, openapi/convai-live-api-openapi.yml, openapi/convai-narrative-design-api-openapi.yml,
+  openapi/convai-streaming-transcription-api-openapi.yml, openapi/convai-tts-api-openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+schemes:
+- name: ConvaiApiKey
+  type: apiKey
+  in: header
+  parameter: CONVAI-API-KEY
+  sources:
+  - openapi/convai-character-api-openapi.yml
+  - openapi/convai-chat-history-api-openapi.yml
+  - openapi/convai-custom-llm-api-openapi.yml
+  - openapi/convai-evaluation-api-openapi.yml
+  - openapi/convai-interaction-api-openapi.yml
+  - openapi/convai-knowledge-bank-api-openapi.yml
+  - openapi/convai-narrative-design-api-openapi.yml
+  - openapi/convai-streaming-transcription-api-openapi.yml
+  - openapi/convai-tts-api-openapi.yml
+- name: LiveApiKey
+  type: apiKey
+  in: header
+  parameter: X-API-Key
+  sources:
+  - openapi/convai-live-api-openapi.yml
