@@ -1,0 +1,136 @@
+openapi: 3.1.0
+info:
+  title: Convai Character Characters Custom LLM API
+  version: '1.0'
+  description: 'REST API for creating, listing, updating, cloning, and deleting Convai
+
+    conversational AI characters. Characters are reusable conversational agents
+
+    with backstory, voice, personality, language, and knowledge configuration
+
+    that can be embodied in games, virtual worlds, and 3D experiences via the
+
+    Unity, Unreal, Web, and other Convai SDKs.
+
+    '
+  contact:
+    name: Convai Developer Support
+    url: https://forum.convai.com
+servers:
+- url: https://api.convai.com
+  description: Convai REST API
+security:
+- ConvaiApiKey: []
+tags:
+- name: Custom LLM
+paths:
+  /custom-llm/register:
+    post:
+      summary: Register Custom LLM
+      operationId: registerCustomLLM
+      tags:
+      - Custom LLM
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - model_group_name
+              - model_name
+              - api_key
+              - base_url
+              properties:
+                model_group_name:
+                  type: string
+                model_name:
+                  type: string
+                api_key:
+                  type: string
+                base_url:
+                  type: string
+                  format: uri
+                is_uncensored:
+                  type: boolean
+                  default: false
+      responses:
+        '200':
+          description: Registered
+  /custom-llm/update:
+    post:
+      summary: Update Custom LLM
+      operationId: updateCustomLLM
+      tags:
+      - Custom LLM
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - model_group_name
+              properties:
+                model_group_name:
+                  type: string
+                model_name:
+                  type: string
+                api_key:
+                  type: string
+                base_url:
+                  type: string
+                  format: uri
+                is_uncensored:
+                  type: boolean
+      responses:
+        '200':
+          description: Updated
+  /custom-llm/deregister:
+    post:
+      summary: Deregister Custom LLM
+      operationId: deregisterCustomLLM
+      tags:
+      - Custom LLM
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - model_group_name
+              properties:
+                model_group_name:
+                  type: string
+      responses:
+        '200':
+          description: Deregistered
+  /custom-llm/list:
+    post:
+      summary: List Custom LLMs
+      operationId: listCustomLLMs
+      tags:
+      - Custom LLM
+      responses:
+        '200':
+          description: Custom LLM list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    model_group_name:
+                      type: string
+                    model_name:
+                      type: string
+                    base_url:
+                      type: string
+components:
+  securitySchemes:
+    ConvaiApiKey:
+      type: apiKey
+      in: header
+      name: CONVAI-API-KEY

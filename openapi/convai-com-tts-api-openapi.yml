@@ -1,36 +1,57 @@
 openapi: 3.1.0
 info:
-  title: Convai Text-to-Speech API
-  version: "1.0"
-  description: |
-    Generate audio from text using Convai's voice catalog. Returns audio bytes
-    in the requested encoding for use in games, virtual worlds, and accessibility
-    flows. Voice catalog and supported languages are queryable via the TTS
-    listing endpoints. Enterprise tier.
+  title: Convai Character Characters TTS API
+  version: '1.0'
+  description: 'REST API for creating, listing, updating, cloning, and deleting Convai
+
+    conversational AI characters. Characters are reusable conversational agents
+
+    with backstory, voice, personality, language, and knowledge configuration
+
+    that can be embodied in games, virtual worlds, and 3D experiences via the
+
+    Unity, Unreal, Web, and other Convai SDKs.
+
+    '
+  contact:
+    name: Convai Developer Support
+    url: https://forum.convai.com
 servers:
 - url: https://api.convai.com
+  description: Convai REST API
 security:
 - ConvaiApiKey: []
+tags:
+- name: TTS
 paths:
   /tts:
     post:
       summary: Synthesize Speech
       operationId: synthesizeSpeech
-      tags: [TTS]
+      tags:
+      - TTS
       requestBody:
         required: true
         content:
           application/json:
             schema:
               type: object
-              required: [transcript, voice]
+              required:
+              - transcript
+              - voice
               properties:
-                transcript: { type: string }
-                voice: { type: string }
-                filename: { type: string }
+                transcript:
+                  type: string
+                voice:
+                  type: string
+                filename:
+                  type: string
                 encoding:
                   type: string
-                  enum: [wav, mp3, pcm]
+                  enum:
+                  - wav
+                  - mp3
+                  - pcm
       responses:
         '200':
           description: Audio bytes
@@ -47,7 +68,8 @@ paths:
     get:
       summary: List Available Voices
       operationId: listVoices
-      tags: [TTS]
+      tags:
+      - TTS
       responses:
         '200':
           description: Voice list
@@ -58,15 +80,20 @@ paths:
                 items:
                   type: object
                   properties:
-                    voice: { type: string }
-                    language: { type: string }
-                    gender: { type: string }
-                    description: { type: string }
+                    voice:
+                      type: string
+                    language:
+                      type: string
+                    gender:
+                      type: string
+                    description:
+                      type: string
   /tts/get_available_languages:
     get:
       summary: List Available Languages
       operationId: listLanguages
-      tags: [TTS]
+      tags:
+      - TTS
       responses:
         '200':
           description: Language list
@@ -77,8 +104,10 @@ paths:
                 items:
                   type: object
                   properties:
-                    language: { type: string }
-                    code: { type: string }
+                    language:
+                      type: string
+                    code:
+                      type: string
 components:
   securitySchemes:
     ConvaiApiKey:

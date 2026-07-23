@@ -1,0 +1,81 @@
+openapi: 3.1.0
+info:
+  title: Convai Character Characters Live API
+  version: '1.0'
+  description: 'REST API for creating, listing, updating, cloning, and deleting Convai
+
+    conversational AI characters. Characters are reusable conversational agents
+
+    with backstory, voice, personality, language, and knowledge configuration
+
+    that can be embodied in games, virtual worlds, and 3D experiences via the
+
+    Unity, Unreal, Web, and other Convai SDKs.
+
+    '
+  contact:
+    name: Convai Developer Support
+    url: https://forum.convai.com
+servers:
+- url: https://api.convai.com
+  description: Convai REST API
+security:
+- ConvaiApiKey: []
+tags:
+- name: Live
+paths:
+  /connect:
+    post:
+      summary: Connect Live Session
+      operationId: connectLiveSession
+      tags:
+      - Live
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - character_id
+              properties:
+                character_id:
+                  type: string
+                session_id:
+                  type: string
+                debug:
+                  type: boolean
+                  description: Enable metrics events on the data channel
+                  default: false
+                audio_config:
+                  type: object
+                  properties:
+                    output:
+                      type: object
+                      properties:
+                        audio_routing:
+                          type: string
+                          enum:
+                          - media
+                          - data-channel
+      responses:
+        '200':
+          description: Connection params (SDP, ICE servers, room info)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  room_url:
+                    type: string
+                    format: uri
+                  token:
+                    type: string
+                  sdp:
+                    type: string
+components:
+  securitySchemes:
+    ConvaiApiKey:
+      type: apiKey
+      in: header
+      name: CONVAI-API-KEY

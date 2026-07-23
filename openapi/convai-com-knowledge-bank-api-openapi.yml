@@ -1,32 +1,53 @@
 openapi: 3.1.0
 info:
-  title: Convai Knowledge Bank API
-  version: "1.0"
-  description: |
-    Manage retrieval-augmented knowledge documents attached to Convai
-    characters. Upload PDFs, text, and other docs that characters will
-    reference when generating responses. Enterprise tier.
+  title: Convai Character Characters Knowledge Bank API
+  version: '1.0'
+  description: 'REST API for creating, listing, updating, cloning, and deleting Convai
+
+    conversational AI characters. Characters are reusable conversational agents
+
+    with backstory, voice, personality, language, and knowledge configuration
+
+    that can be embodied in games, virtual worlds, and 3D experiences via the
+
+    Unity, Unreal, Web, and other Convai SDKs.
+
+    '
+  contact:
+    name: Convai Developer Support
+    url: https://forum.convai.com
 servers:
 - url: https://api.convai.com
+  description: Convai REST API
 security:
 - ConvaiApiKey: []
+tags:
+- name: Knowledge Bank
 paths:
   /character/knowledge-bank/upload:
     post:
       summary: Upload Knowledge Bank Document
       operationId: uploadKnowledgeBank
-      tags: [Knowledge Bank]
+      tags:
+      - Knowledge Bank
       requestBody:
         required: true
         content:
           multipart/form-data:
             schema:
               type: object
-              required: [file_name, file, character_id]
+              required:
+              - file_name
+              - file
+              - character_id
               properties:
-                file_name: { type: string }
-                file: { type: string, format: binary }
-                character_id: { type: string }
+                file_name:
+                  type: string
+                file:
+                  type: string
+                  format: binary
+                character_id:
+                  type: string
       responses:
         '200':
           description: Document uploaded
@@ -35,23 +56,30 @@ paths:
               schema:
                 type: object
                 properties:
-                  document_id: { type: string }
+                  document_id:
+                    type: string
   /character/knowledge-bank/update:
     post:
       summary: Update Knowledge Bank Document
       operationId: updateKnowledgeBank
-      tags: [Knowledge Bank]
+      tags:
+      - Knowledge Bank
       requestBody:
         required: true
         content:
           application/json:
             schema:
               type: object
-              required: [document_id, character_id]
+              required:
+              - document_id
+              - character_id
               properties:
-                document_id: { type: string }
-                character_id: { type: string }
-                docs: { type: string }
+                document_id:
+                  type: string
+                character_id:
+                  type: string
+                docs:
+                  type: string
       responses:
         '200':
           description: Updated
@@ -59,16 +87,19 @@ paths:
     post:
       summary: List Knowledge Bank Documents
       operationId: listKnowledgeBank
-      tags: [Knowledge Bank]
+      tags:
+      - Knowledge Bank
       requestBody:
         required: true
         content:
           application/json:
             schema:
               type: object
-              required: [character_id]
+              required:
+              - character_id
               properties:
-                character_id: { type: string }
+                character_id:
+                  type: string
       responses:
         '200':
           description: Document list
@@ -79,24 +110,32 @@ paths:
                 items:
                   type: object
                   properties:
-                    document_id: { type: string }
-                    file_name: { type: string }
-                    status: { type: string }
+                    document_id:
+                      type: string
+                    file_name:
+                      type: string
+                    status:
+                      type: string
   /character/knowledge-bank/delete:
     post:
       summary: Delete Knowledge Bank Document
       operationId: deleteKnowledgeBank
-      tags: [Knowledge Bank]
+      tags:
+      - Knowledge Bank
       requestBody:
         required: true
         content:
           application/json:
             schema:
               type: object
-              required: [document_id, character_id]
+              required:
+              - document_id
+              - character_id
               properties:
-                document_id: { type: string }
-                character_id: { type: string }
+                document_id:
+                  type: string
+                character_id:
+                  type: string
       responses:
         '200':
           description: Deleted

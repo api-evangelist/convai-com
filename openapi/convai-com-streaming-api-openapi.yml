@@ -1,0 +1,56 @@
+openapi: 3.1.0
+info:
+  title: Convai Character Characters Streaming API
+  version: '1.0'
+  description: 'REST API for creating, listing, updating, cloning, and deleting Convai
+
+    conversational AI characters. Characters are reusable conversational agents
+
+    with backstory, voice, personality, language, and knowledge configuration
+
+    that can be embodied in games, virtual worlds, and 3D experiences via the
+
+    Unity, Unreal, Web, and other Convai SDKs.
+
+    '
+  contact:
+    name: Convai Developer Support
+    url: https://forum.convai.com
+servers:
+- url: https://api.convai.com
+  description: Convai REST API
+security:
+- ConvaiApiKey: []
+tags:
+- name: Streaming
+paths:
+  /stream:
+    get:
+      summary: Open Streaming Transcription WebSocket
+      operationId: openTranscriptionStream
+      tags:
+      - Streaming
+      description: 'Upgrade to WebSocket. Send 16-bit PCM, mono, 16 kHz audio binary
+
+        frames. Receive JSON transcript frames with `text`, `is_final`, and
+
+        `confidence`. Authentication via `CONVAI-API-KEY` header or
+
+        `?convai-api-key=` query parameter.
+
+        '
+      parameters:
+      - in: query
+        name: convai-api-key
+        schema:
+          type: string
+        description: Optional alternative to the header auth
+      responses:
+        '101':
+          description: Switching Protocols (WebSocket upgrade)
+components:
+  securitySchemes:
+    ConvaiApiKey:
+      type: apiKey
+      in: header
+      name: CONVAI-API-KEY

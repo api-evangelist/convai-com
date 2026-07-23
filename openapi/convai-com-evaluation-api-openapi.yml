@@ -1,31 +1,50 @@
 openapi: 3.1.0
 info:
-  title: Convai Evaluation API
-  version: "1.0"
-  description: |
-    Score and evaluate Convai character sessions against custom prompts and
-    rubric variables. Used to measure NPC quality, role-fidelity, safety, and
-    objective completion. Professional tier and above.
+  title: Convai Character Characters Evaluation API
+  version: '1.0'
+  description: 'REST API for creating, listing, updating, cloning, and deleting Convai
+
+    conversational AI characters. Characters are reusable conversational agents
+
+    with backstory, voice, personality, language, and knowledge configuration
+
+    that can be embodied in games, virtual worlds, and 3D experiences via the
+
+    Unity, Unreal, Web, and other Convai SDKs.
+
+    '
+  contact:
+    name: Convai Developer Support
+    url: https://forum.convai.com
 servers:
 - url: https://api.convai.com
+  description: Convai REST API
 security:
 - ConvaiApiKey: []
+tags:
+- name: Evaluation
 paths:
   /evaluation/evaluate-session:
     post:
       summary: Evaluate Session
       operationId: evaluateSession
-      tags: [Evaluation]
+      tags:
+      - Evaluation
       requestBody:
         required: true
         content:
           application/json:
             schema:
               type: object
-              required: [session_id, character_id, prompt]
+              required:
+              - session_id
+              - character_id
+              - prompt
               properties:
-                session_id: { type: string }
-                character_id: { type: string }
+                session_id:
+                  type: string
+                character_id:
+                  type: string
                 prompt:
                   type: string
                   description: Evaluation rubric / scoring instructions
@@ -40,8 +59,10 @@ paths:
               schema:
                 type: object
                 properties:
-                  score: { type: number }
-                  reasoning: { type: string }
+                  score:
+                    type: number
+                  reasoning:
+                    type: string
                   variables:
                     type: object
                     additionalProperties: true

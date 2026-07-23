@@ -1,39 +1,58 @@
 openapi: 3.1.0
 info:
-  title: Convai Narrative Design API
-  version: "1.0"
-  description: |
-    Configure narrative-driven characters using sections and triggers. Sections
-    define discrete narrative beats; triggers move the character between
-    sections based on conditions. Used to build branching, scripted experiences
-    on top of Convai's conversational AI.
+  title: Convai Character Characters Narrative API
+  version: '1.0'
+  description: 'REST API for creating, listing, updating, cloning, and deleting Convai
+
+    conversational AI characters. Characters are reusable conversational agents
+
+    with backstory, voice, personality, language, and knowledge configuration
+
+    that can be embodied in games, virtual worlds, and 3D experiences via the
+
+    Unity, Unreal, Web, and other Convai SDKs.
+
+    '
+  contact:
+    name: Convai Developer Support
+    url: https://forum.convai.com
 servers:
 - url: https://api.convai.com
+  description: Convai REST API
 security:
 - ConvaiApiKey: []
+tags:
+- name: Narrative
 paths:
   /character/toggle-is-narrative-driven:
     post:
       summary: Toggle Narrative Mode
       operationId: toggleNarrativeDriven
-      tags: [Narrative]
+      tags:
+      - Narrative
       requestBody:
         required: true
         content:
           application/json:
             schema:
               type: object
-              required: [character_id, is_narrative_driven]
+              required:
+              - character_id
+              - is_narrative_driven
               properties:
-                character_id: { type: string }
-                is_narrative_driven: { type: boolean }
+                character_id:
+                  type: string
+                is_narrative_driven:
+                  type: boolean
       responses:
-        '200': { description: Updated }
+        '200':
+          description: Updated
   /character/narrative/create-section:
     post:
       summary: Create Narrative Section
       operationId: createSection
-      tags: [Narrative]
+      tags:
+      - Narrative
       requestBody:
         required: true
         content:
@@ -48,12 +67,14 @@ paths:
               schema:
                 type: object
                 properties:
-                  section_id: { type: string }
+                  section_id:
+                    type: string
   /character/narrative/edit-section:
     post:
       summary: Edit Narrative Section
       operationId: editSection
-      tags: [Narrative]
+      tags:
+      - Narrative
       requestBody:
         required: true
         content:
@@ -61,22 +82,28 @@ paths:
             schema:
               $ref: '#/components/schemas/Section'
       responses:
-        '200': { description: Section updated }
+        '200':
+          description: Section updated
   /character/narrative/get-section:
     post:
       summary: Get Narrative Section
       operationId: getSection
-      tags: [Narrative]
+      tags:
+      - Narrative
       requestBody:
         required: true
         content:
           application/json:
             schema:
               type: object
-              required: [character_id, section_id]
+              required:
+              - character_id
+              - section_id
               properties:
-                character_id: { type: string }
-                section_id: { type: string }
+                character_id:
+                  type: string
+                section_id:
+                  type: string
       responses:
         '200':
           description: Section
@@ -88,16 +115,19 @@ paths:
     post:
       summary: List Narrative Sections
       operationId: listSections
-      tags: [Narrative]
+      tags:
+      - Narrative
       requestBody:
         required: true
         content:
           application/json:
             schema:
               type: object
-              required: [character_id]
+              required:
+              - character_id
               properties:
-                character_id: { type: string }
+                character_id:
+                  type: string
       responses:
         '200':
           description: Section list
@@ -111,24 +141,31 @@ paths:
     post:
       summary: Delete Narrative Section
       operationId: deleteSection
-      tags: [Narrative]
+      tags:
+      - Narrative
       requestBody:
         required: true
         content:
           application/json:
             schema:
               type: object
-              required: [character_id, section_id]
+              required:
+              - character_id
+              - section_id
               properties:
-                character_id: { type: string }
-                section_id: { type: string }
+                character_id:
+                  type: string
+                section_id:
+                  type: string
       responses:
-        '200': { description: Section deleted }
+        '200':
+          description: Section deleted
   /character/narrative/create-trigger:
     post:
       summary: Create Narrative Trigger
       operationId: createTrigger
-      tags: [Narrative]
+      tags:
+      - Narrative
       requestBody:
         required: true
         content:
@@ -143,12 +180,14 @@ paths:
               schema:
                 type: object
                 properties:
-                  trigger_id: { type: string }
+                  trigger_id:
+                    type: string
   /character/narrative/update-trigger:
     post:
       summary: Update Narrative Trigger
       operationId: updateTrigger
-      tags: [Narrative]
+      tags:
+      - Narrative
       requestBody:
         required: true
         content:
@@ -156,22 +195,28 @@ paths:
             schema:
               $ref: '#/components/schemas/Trigger'
       responses:
-        '200': { description: Trigger updated }
+        '200':
+          description: Trigger updated
   /character/narrative/get-trigger:
     post:
       summary: Get Narrative Trigger
       operationId: getTrigger
-      tags: [Narrative]
+      tags:
+      - Narrative
       requestBody:
         required: true
         content:
           application/json:
             schema:
               type: object
-              required: [character_id, trigger_id]
+              required:
+              - character_id
+              - trigger_id
               properties:
-                character_id: { type: string }
-                trigger_id: { type: string }
+                character_id:
+                  type: string
+                trigger_id:
+                  type: string
       responses:
         '200':
           description: Trigger
@@ -183,16 +228,19 @@ paths:
     post:
       summary: List Narrative Triggers
       operationId: listTriggers
-      tags: [Narrative]
+      tags:
+      - Narrative
       requestBody:
         required: true
         content:
           application/json:
             schema:
               type: object
-              required: [character_id]
+              required:
+              - character_id
               properties:
-                character_id: { type: string }
+                character_id:
+                  type: string
       responses:
         '200':
           description: Trigger list
@@ -206,42 +254,64 @@ paths:
     post:
       summary: Delete Narrative Trigger
       operationId: deleteTrigger
-      tags: [Narrative]
+      tags:
+      - Narrative
       requestBody:
         required: true
         content:
           application/json:
             schema:
               type: object
-              required: [character_id, trigger_id]
+              required:
+              - character_id
+              - trigger_id
               properties:
-                character_id: { type: string }
-                trigger_id: { type: string }
+                character_id:
+                  type: string
+                trigger_id:
+                  type: string
       responses:
-        '200': { description: Trigger deleted }
+        '200':
+          description: Trigger deleted
 components:
+  schemas:
+    Trigger:
+      type: object
+      required:
+      - character_id
+      - trigger_name
+      properties:
+        character_id:
+          type: string
+        trigger_id:
+          type: string
+        trigger_name:
+          type: string
+        trigger_message:
+          type: string
+        destination_section:
+          type: string
+    Section:
+      type: object
+      required:
+      - character_id
+      - section_name
+      - objective
+      properties:
+        character_id:
+          type: string
+        section_id:
+          type: string
+        section_name:
+          type: string
+        objective:
+          type: string
+        behavior_tree_code:
+          type: string
+        updates_player_persona:
+          type: boolean
   securitySchemes:
     ConvaiApiKey:
       type: apiKey
       in: header
       name: CONVAI-API-KEY
-  schemas:
-    Section:
-      type: object
-      required: [character_id, section_name, objective]
-      properties:
-        character_id: { type: string }
-        section_id: { type: string }
-        section_name: { type: string }
-        objective: { type: string }
-        behavior_tree_code: { type: string }
-        updates_player_persona: { type: boolean }
-    Trigger:
-      type: object
-      required: [character_id, trigger_name]
-      properties:
-        character_id: { type: string }
-        trigger_id: { type: string }
-        trigger_name: { type: string }
-        trigger_message: { type: string }
-        destination_section: { type: string }

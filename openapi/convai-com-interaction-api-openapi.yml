@@ -1,27 +1,42 @@
 openapi: 3.1.0
 info:
-  title: Convai Interaction API
-  version: "1.0"
-  description: |
-    The Interaction API is the runtime conversational endpoint for Convai
-    characters. Send user text or audio with a sessionID and characterID and
-    receive the character's spoken and animated response, including text reply,
-    audio bytes, action triggers, emotion state, and lip-sync data. This is the
-    endpoint that powers in-game and in-world NPC conversations.
+  title: Convai Character Characters Interaction API
+  version: '1.0'
+  description: 'REST API for creating, listing, updating, cloning, and deleting Convai
+
+    conversational AI characters. Characters are reusable conversational agents
+
+    with backstory, voice, personality, language, and knowledge configuration
+
+    that can be embodied in games, virtual worlds, and 3D experiences via the
+
+    Unity, Unreal, Web, and other Convai SDKs.
+
+    '
+  contact:
+    name: Convai Developer Support
+    url: https://forum.convai.com
 servers:
 - url: https://api.convai.com
+  description: Convai REST API
 security:
 - ConvaiApiKey: []
+tags:
+- name: Interaction
 paths:
   /character/getResponse:
     post:
       summary: Get Character Response
       operationId: getCharacterResponse
-      tags: [Interaction]
-      description: |
-        Send user input to a Convai character and receive its conversational
+      tags:
+      - Interaction
+      description: 'Send user input to a Convai character and receive its conversational
+
         response. Supports text and audio input, with audio, text, action, and
+
         emotion outputs. Use sessionID="-1" to start a new conversation.
+
+        '
       requestBody:
         required: true
         content:
@@ -36,20 +51,20 @@ paths:
               schema:
                 $ref: '#/components/schemas/GetResponseResponse'
 components:
-  securitySchemes:
-    ConvaiApiKey:
-      type: apiKey
-      in: header
-      name: CONVAI-API-KEY
   schemas:
     GetResponseRequest:
       type: object
-      required: [userText, charID, sessionID, voiceResponse]
+      required:
+      - userText
+      - charID
+      - sessionID
+      - voiceResponse
       properties:
         userText:
           type: string
           description: User input as text. Use "(USER_PERFORMED_ACTIONS)" placeholder when sending audio.
-        charID: { type: string }
+        charID:
+          type: string
         sessionID:
           type: string
           description: Use "-1" to start a new session
@@ -70,7 +85,16 @@ components:
           type: string
           format: byte
           description: Base64-encoded audio response
-        sessionID: { type: string }
-        action: { type: string }
-        emotion: { type: string }
-        narrativeSectionId: { type: string }
+        sessionID:
+          type: string
+        action:
+          type: string
+        emotion:
+          type: string
+        narrativeSectionId:
+          type: string
+  securitySchemes:
+    ConvaiApiKey:
+      type: apiKey
+      in: header
+      name: CONVAI-API-KEY

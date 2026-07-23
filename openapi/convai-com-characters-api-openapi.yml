@@ -1,13 +1,18 @@
 openapi: 3.1.0
 info:
-  title: Convai Character API
-  version: "1.0"
-  description: |
-    REST API for creating, listing, updating, cloning, and deleting Convai
+  title: Convai Character Characters API
+  version: '1.0'
+  description: 'REST API for creating, listing, updating, cloning, and deleting Convai
+
     conversational AI characters. Characters are reusable conversational agents
+
     with backstory, voice, personality, language, and knowledge configuration
+
     that can be embodied in games, virtual worlds, and 3D experiences via the
+
     Unity, Unreal, Web, and other Convai SDKs.
+
+    '
   contact:
     name: Convai Developer Support
     url: https://forum.convai.com
@@ -16,12 +21,15 @@ servers:
   description: Convai REST API
 security:
 - ConvaiApiKey: []
+tags:
+- name: Characters
 paths:
   /character/create:
     post:
       summary: Create Character
       operationId: createCharacter
-      tags: [Characters]
+      tags:
+      - Characters
       requestBody:
         required: true
         content:
@@ -39,16 +47,19 @@ paths:
     post:
       summary: Get Character
       operationId: getCharacter
-      tags: [Characters]
+      tags:
+      - Characters
       requestBody:
         required: true
         content:
           application/json:
             schema:
               type: object
-              required: [charID]
+              required:
+              - charID
               properties:
-                charID: { type: string }
+                charID:
+                  type: string
       responses:
         '200':
           description: Character details
@@ -60,7 +71,8 @@ paths:
     post:
       summary: Update Character
       operationId: updateCharacter
-      tags: [Characters]
+      tags:
+      - Characters
       requestBody:
         required: true
         content:
@@ -74,7 +86,8 @@ paths:
     post:
       summary: List Characters
       operationId: listCharacters
-      tags: [Characters]
+      tags:
+      - Characters
       responses:
         '200':
           description: List of characters
@@ -88,16 +101,19 @@ paths:
     post:
       summary: Delete Character
       operationId: deleteCharacter
-      tags: [Characters]
+      tags:
+      - Characters
       requestBody:
         required: true
         content:
           application/json:
             schema:
               type: object
-              required: [charID]
+              required:
+              - charID
               properties:
-                charID: { type: string }
+                charID:
+                  type: string
       responses:
         '200':
           description: Character deleted
@@ -105,55 +121,83 @@ paths:
     post:
       summary: Clone Character
       operationId: cloneCharacter
-      tags: [Characters]
+      tags:
+      - Characters
       requestBody:
         required: true
         content:
           application/json:
             schema:
               type: object
-              required: [charID]
+              required:
+              - charID
               properties:
-                charID: { type: string }
+                charID:
+                  type: string
       responses:
         '200':
           description: Character cloned
 components:
+  schemas:
+    Character:
+      type: object
+      properties:
+        charID:
+          type: string
+        charName:
+          type: string
+        voiceType:
+          type: string
+        backstory:
+          type: string
+        language:
+          type: string
+        timestamp:
+          type: string
+          format: date-time
+    CharacterCreateRequest:
+      type: object
+      required:
+      - charName
+      - voiceType
+      - backstory
+      properties:
+        charName:
+          type: string
+        voiceType:
+          type: string
+          description: Voice identifier from the Voice List API
+        backstory:
+          type: string
+        language:
+          type: string
+          default: en-us
+        timezone:
+          type: string
+    CharacterCreateResponse:
+      type: object
+      properties:
+        charID:
+          type: string
+        status:
+          type: string
+    CharacterUpdateRequest:
+      type: object
+      required:
+      - charID
+      properties:
+        charID:
+          type: string
+        charName:
+          type: string
+        voiceType:
+          type: string
+        backstory:
+          type: string
+        language:
+          type: string
   securitySchemes:
     ConvaiApiKey:
       type: apiKey
       in: header
       name: CONVAI-API-KEY
-  schemas:
-    CharacterCreateRequest:
-      type: object
-      required: [charName, voiceType, backstory]
-      properties:
-        charName: { type: string }
-        voiceType: { type: string, description: "Voice identifier from the Voice List API" }
-        backstory: { type: string }
-        language: { type: string, default: en-us }
-        timezone: { type: string }
-    CharacterUpdateRequest:
-      type: object
-      required: [charID]
-      properties:
-        charID: { type: string }
-        charName: { type: string }
-        voiceType: { type: string }
-        backstory: { type: string }
-        language: { type: string }
-    CharacterCreateResponse:
-      type: object
-      properties:
-        charID: { type: string }
-        status: { type: string }
-    Character:
-      type: object
-      properties:
-        charID: { type: string }
-        charName: { type: string }
-        voiceType: { type: string }
-        backstory: { type: string }
-        language: { type: string }
-        timestamp: { type: string, format: date-time }
