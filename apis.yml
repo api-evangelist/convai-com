@@ -1,181 +1,196 @@
 aid: convai-com
 url: https://raw.githubusercontent.com/api-evangelist/convai-com/refs/heads/main/apis.yml
 apis:
-  - aid: convai-com:convai-character-api
-    name: Convai Character API
-    tags:
-      - AI
-      - Conversational AI
-      - Characters
-      - NPCs
-    humanURL: https://docs.convai.com/api-docs/api-reference/core-api-reference
-    properties:
-      - url: https://docs.convai.com/api-docs/api-reference/core-api-reference
-        type: Documentation
-      - url: openapi/convai-character-api-openapi.yml
-        type: OpenAPI
-      - url: json-schema/convai-character-schema.json
-        type: JSONSchema
-      - url: json-ld/convai-context.jsonld
-        type: JSONLD
-    description: >-
-      Create, list, update, clone, and delete Convai conversational AI characters. Each character is a reusable
-      conversational agent with backstory, voice, language, personality, knowledge bank, and narrative design
-      configuration that can be embodied in games and virtual worlds via the Unity, Unreal, Web, and other Convai SDKs.
-  - aid: convai-com:convai-interaction-api
-    name: Convai Interaction API
-    tags:
-      - AI
-      - Conversational AI
-      - Characters
-      - Interaction
-      - NPCs
-    humanURL: https://docs.convai.com/api-docs/api-reference/core-api-reference
-    properties:
-      - url: https://docs.convai.com/api-docs/api-reference/core-api-reference
-        type: Documentation
-      - url: openapi/convai-interaction-api-openapi.yml
-        type: OpenAPI
-      - url: json-schema/convai-interaction-schema.json
-        type: JSONSchema
-    description: >-
-      Runtime conversational endpoint that powers in-game NPC dialogue. Send user text or audio plus a session and
-      character ID and receive the character's text reply, base64 audio, action triggers, emotion state, and narrative
-      section data. The single most-called endpoint in the Convai stack.
-  - aid: convai-com:convai-knowledge-bank-api
-    name: Convai Knowledge Bank API
-    tags:
-      - AI
-      - Conversational AI
-      - Knowledge Bank
-      - RAG
-    humanURL: https://docs.convai.com/api-docs/api-reference/core-api-reference
-    properties:
-      - url: https://docs.convai.com/api-docs/api-reference/core-api-reference
-        type: Documentation
-      - url: openapi/convai-knowledge-bank-api-openapi.yml
-        type: OpenAPI
-    description: >-
-      Upload, update, list, and delete RAG documents attached to characters so they can reference custom knowledge
-      during conversations. Enterprise tier.
-  - aid: convai-com:convai-tts-api
-    name: Convai Text-to-Speech API
-    tags:
-      - AI
-      - Speech
-      - TTS
-      - Voice
-    humanURL: https://docs.convai.com/api-docs/api-reference/core-api-reference
-    properties:
-      - url: https://docs.convai.com/api-docs/api-reference/core-api-reference
-        type: Documentation
-      - url: openapi/convai-tts-api-openapi.yml
-        type: OpenAPI
-    description: >-
-      Synthesize speech from text using Convai's catalog of 500+ voices across 65+ languages. Returns audio bytes for
-      use in games, virtual worlds, and accessibility flows. Enterprise tier.
-  - aid: convai-com:convai-narrative-design-api
-    name: Convai Narrative Design API
-    tags:
-      - AI
-      - Conversational AI
-      - Narrative
-      - Game Design
-    humanURL: https://docs.convai.com/api-docs/api-reference/core-api-reference
-    properties:
-      - url: https://docs.convai.com/api-docs/api-reference/core-api-reference
-        type: Documentation
-      - url: openapi/convai-narrative-design-api-openapi.yml
-        type: OpenAPI
-    description: >-
-      Configure narrative-driven characters with sections (discrete story beats with objectives) and triggers
-      (conditions that move the character between sections). Backs branching, scripted game experiences on top of
-      Convai's conversational AI.
-  - aid: convai-com:convai-chat-history-api
-    name: Convai Chat History API
-    tags:
-      - AI
-      - Conversational AI
-      - Chat History
-      - Analytics
-    humanURL: https://docs.convai.com/api-docs/api-reference/core-api-reference
-    properties:
-      - url: https://docs.convai.com/api-docs/api-reference/core-api-reference
-        type: Documentation
-      - url: openapi/convai-chat-history-api-openapi.yml
-        type: OpenAPI
-    description: >-
-      List a character's sessions and fetch full session transcripts for analytics, debugging, evaluation, and auditing
-      of NPC conversations. Scale tier and above.
-  - aid: convai-com:convai-custom-llm-api
-    name: Convai Custom LLM API
-    tags:
-      - AI
-      - Conversational AI
-      - LLM
-      - BYO Model
-    humanURL: https://docs.convai.com/api-docs/api-reference/core-api-reference
-    properties:
-      - url: https://docs.convai.com/api-docs/api-reference/core-api-reference
-        type: Documentation
-      - url: openapi/convai-custom-llm-api-openapi.yml
-        type: OpenAPI
-    description: >-
-      Register, update, deregister, and list OpenAI-compatible custom LLM endpoints to use as the reasoning backbone for
-      Convai characters. Lets Enterprise customers route character responses through their own model deployments.
-      Enterprise tier.
-  - aid: convai-com:convai-evaluation-api
-    name: Convai Evaluation API
-    tags:
-      - AI
-      - Conversational AI
-      - Evaluation
-      - Quality
-    humanURL: https://docs.convai.com/api-docs/api-reference/core-api-reference
-    properties:
-      - url: https://docs.convai.com/api-docs/api-reference/core-api-reference
-        type: Documentation
-      - url: openapi/convai-evaluation-api-openapi.yml
-        type: OpenAPI
-    description: >-
-      Score and evaluate Convai character sessions against a custom prompt and rubric variables. Used to measure NPC
-      quality, role fidelity, safety, and objective completion. Professional tier and above.
-  - aid: convai-com:convai-streaming-transcription-api
-    name: Convai Streaming Transcription API
-    tags:
-      - AI
-      - Speech
-      - Transcription
-      - Streaming
-      - WebSocket
-    humanURL: https://docs.convai.com/api-docs/api-reference/core-api-reference
-    properties:
-      - url: https://docs.convai.com/api-docs/api-reference/core-api-reference
-        type: Documentation
-      - url: openapi/convai-streaming-transcription-api-openapi.yml
-        type: OpenAPI
-    description: >-
-      Real-time speech-to-text over WebSocket (wss://transcribe.convai.com/stream). Stream 16-bit PCM, mono, 16 kHz
-      audio and receive incremental transcripts. Used by the Convai plugins to drive low-latency voice input from
-      players.
-  - aid: convai-com:convai-live-api
-    name: Convai Live API
-    tags:
-      - AI
-      - Conversational AI
-      - Live
-      - WebRTC
-      - Beta
-    humanURL: https://docs.convai.com/api-docs/api-reference/live-api-reference
-    properties:
-      - url: https://docs.convai.com/api-docs/api-reference/live-api-reference
-        type: Documentation
-      - url: openapi/convai-live-api-openapi.yml
-        type: OpenAPI
-    description: >-
-      Beta Live API for ultra-low-latency, fully duplex character sessions over WebRTC. POST /connect at live.convai.com
-      to establish a session; subsequent audio and event messages flow over WebRTC data channels (RTVI message format)
-      and media tracks. Authenticated via X-API-Key.
+- aid: convai-com:convai-com-characters-api
+  name: Convai Characters API
+  description: The Characters API from Convai — 6 operation(s) for characters.
+  humanURL: https://docs.convai.com/api-docs/api-reference/core-api-reference
+  tags:
+  - Characters
+  properties:
+  - type: OpenAPI
+    url: openapi/convai-com-characters-api-openapi.yml
+  - type: Documentation
+    url: https://docs.convai.com/api-docs/api-reference/core-api-reference
+  - type: JSONSchema
+    url: json-schema/convai-character-schema.json
+  - type: JSONLD
+    url: json-ld/convai-context.jsonld
+  - type: JSONSchema
+    url: json-schema/convai-interaction-schema.json
+  - type: Documentation
+    url: https://docs.convai.com/api-docs/api-reference/live-api-reference
+- aid: convai-com:convai-com-chat-history-api
+  name: Convai Chat History API
+  description: The Chat History API from Convai — 2 operation(s) for chat history.
+  humanURL: https://docs.convai.com/api-docs/api-reference/core-api-reference
+  tags:
+  - Chat History
+  properties:
+  - type: OpenAPI
+    url: openapi/convai-com-chat-history-api-openapi.yml
+  - type: Documentation
+    url: https://docs.convai.com/api-docs/api-reference/core-api-reference
+  - type: JSONSchema
+    url: json-schema/convai-character-schema.json
+  - type: JSONLD
+    url: json-ld/convai-context.jsonld
+  - type: JSONSchema
+    url: json-schema/convai-interaction-schema.json
+  - type: Documentation
+    url: https://docs.convai.com/api-docs/api-reference/live-api-reference
+- aid: convai-com:convai-com-custom-llm-api
+  name: Convai Custom LLM API
+  description: The Custom LLM API from Convai — 4 operation(s) for custom llm.
+  humanURL: https://docs.convai.com/api-docs/api-reference/core-api-reference
+  tags:
+  - Custom LLM
+  properties:
+  - type: OpenAPI
+    url: openapi/convai-com-custom-llm-api-openapi.yml
+  - type: Documentation
+    url: https://docs.convai.com/api-docs/api-reference/core-api-reference
+  - type: JSONSchema
+    url: json-schema/convai-character-schema.json
+  - type: JSONLD
+    url: json-ld/convai-context.jsonld
+  - type: JSONSchema
+    url: json-schema/convai-interaction-schema.json
+  - type: Documentation
+    url: https://docs.convai.com/api-docs/api-reference/live-api-reference
+- aid: convai-com:convai-com-evaluation-api
+  name: Convai Evaluation API
+  description: The Evaluation API from Convai — 1 operation(s) for evaluation.
+  humanURL: https://docs.convai.com/api-docs/api-reference/core-api-reference
+  tags:
+  - Evaluation
+  properties:
+  - type: OpenAPI
+    url: openapi/convai-com-evaluation-api-openapi.yml
+  - type: Documentation
+    url: https://docs.convai.com/api-docs/api-reference/core-api-reference
+  - type: JSONSchema
+    url: json-schema/convai-character-schema.json
+  - type: JSONLD
+    url: json-ld/convai-context.jsonld
+  - type: JSONSchema
+    url: json-schema/convai-interaction-schema.json
+  - type: Documentation
+    url: https://docs.convai.com/api-docs/api-reference/live-api-reference
+- aid: convai-com:convai-com-interaction-api
+  name: Convai Interaction API
+  description: The Interaction API from Convai — 1 operation(s) for interaction.
+  humanURL: https://docs.convai.com/api-docs/api-reference/core-api-reference
+  tags:
+  - Interaction
+  properties:
+  - type: OpenAPI
+    url: openapi/convai-com-interaction-api-openapi.yml
+  - type: Documentation
+    url: https://docs.convai.com/api-docs/api-reference/core-api-reference
+  - type: JSONSchema
+    url: json-schema/convai-character-schema.json
+  - type: JSONLD
+    url: json-ld/convai-context.jsonld
+  - type: JSONSchema
+    url: json-schema/convai-interaction-schema.json
+  - type: Documentation
+    url: https://docs.convai.com/api-docs/api-reference/live-api-reference
+- aid: convai-com:convai-com-knowledge-bank-api
+  name: Convai Knowledge Bank API
+  description: The Knowledge Bank API from Convai — 4 operation(s) for knowledge bank.
+  humanURL: https://docs.convai.com/api-docs/api-reference/core-api-reference
+  tags:
+  - Knowledge Bank
+  properties:
+  - type: OpenAPI
+    url: openapi/convai-com-knowledge-bank-api-openapi.yml
+  - type: Documentation
+    url: https://docs.convai.com/api-docs/api-reference/core-api-reference
+  - type: JSONSchema
+    url: json-schema/convai-character-schema.json
+  - type: JSONLD
+    url: json-ld/convai-context.jsonld
+  - type: JSONSchema
+    url: json-schema/convai-interaction-schema.json
+  - type: Documentation
+    url: https://docs.convai.com/api-docs/api-reference/live-api-reference
+- aid: convai-com:convai-com-live-api
+  name: Convai Live API
+  description: The Live API from Convai — 1 operation(s) for live.
+  humanURL: https://docs.convai.com/api-docs/api-reference/core-api-reference
+  tags:
+  - Live
+  properties:
+  - type: OpenAPI
+    url: openapi/convai-com-live-api-openapi.yml
+  - type: Documentation
+    url: https://docs.convai.com/api-docs/api-reference/core-api-reference
+  - type: JSONSchema
+    url: json-schema/convai-character-schema.json
+  - type: JSONLD
+    url: json-ld/convai-context.jsonld
+  - type: JSONSchema
+    url: json-schema/convai-interaction-schema.json
+  - type: Documentation
+    url: https://docs.convai.com/api-docs/api-reference/live-api-reference
+- aid: convai-com:convai-com-narrative-api
+  name: Convai Narrative API
+  description: The Narrative API from Convai — 11 operation(s) for narrative.
+  humanURL: https://docs.convai.com/api-docs/api-reference/core-api-reference
+  tags:
+  - Narrative
+  properties:
+  - type: OpenAPI
+    url: openapi/convai-com-narrative-api-openapi.yml
+  - type: Documentation
+    url: https://docs.convai.com/api-docs/api-reference/core-api-reference
+  - type: JSONSchema
+    url: json-schema/convai-character-schema.json
+  - type: JSONLD
+    url: json-ld/convai-context.jsonld
+  - type: JSONSchema
+    url: json-schema/convai-interaction-schema.json
+  - type: Documentation
+    url: https://docs.convai.com/api-docs/api-reference/live-api-reference
+- aid: convai-com:convai-com-streaming-api
+  name: Convai Streaming API
+  description: The Streaming API from Convai — 1 operation(s) for streaming.
+  humanURL: https://docs.convai.com/api-docs/api-reference/core-api-reference
+  tags:
+  - Streaming
+  properties:
+  - type: OpenAPI
+    url: openapi/convai-com-streaming-api-openapi.yml
+  - type: Documentation
+    url: https://docs.convai.com/api-docs/api-reference/core-api-reference
+  - type: JSONSchema
+    url: json-schema/convai-character-schema.json
+  - type: JSONLD
+    url: json-ld/convai-context.jsonld
+  - type: JSONSchema
+    url: json-schema/convai-interaction-schema.json
+  - type: Documentation
+    url: https://docs.convai.com/api-docs/api-reference/live-api-reference
+- aid: convai-com:convai-com-tts-api
+  name: Convai TTS API
+  description: The TTS API from Convai — 3 operation(s) for tts.
+  humanURL: https://docs.convai.com/api-docs/api-reference/core-api-reference
+  tags:
+  - TTS
+  properties:
+  - type: OpenAPI
+    url: openapi/convai-com-tts-api-openapi.yml
+  - type: Documentation
+    url: https://docs.convai.com/api-docs/api-reference/core-api-reference
+  - type: JSONSchema
+    url: json-schema/convai-character-schema.json
+  - type: JSONLD
+    url: json-ld/convai-context.jsonld
+  - type: JSONSchema
+    url: json-schema/convai-interaction-schema.json
+  - type: Documentation
+    url: https://docs.convai.com/api-docs/api-reference/live-api-reference
 name: Convai
 tags:
   - AI
@@ -189,9 +204,24 @@ tags:
   - TTS
   - WebRTC
 kind: contract
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: true
+  try_now: true
+  public: false
+  label: Freemium (free trial) · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/convai-com.png
 access: 3rd-Party
 common:
+  - type: PostmanWorkspace
+    url: https://www.postman.com/kinlaneapi/convai/overview
   - type: AgenticAccess
     url: agentic-access/convai-com-agentic-access.yml
   - type: DomainSecurity
