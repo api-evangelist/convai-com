@@ -1,0 +1,210 @@
+{
+  "info": {
+    "_postman_id": "ebea9de2-91b5-455c-a9e8-05ff41baae24",
+    "name": "Convai Character Characters Interaction API",
+    "description": "REST API for creating, listing, updating, cloning, and deleting Convai\nconversational AI characters. Characters are reusable conversational agents\nwith backstory, voice, personality, language, and knowledge configuration\nthat can be embodied in games, virtual worlds, and 3D experiences via the\nUnity, Unreal, Web, and other Convai SDKs.\n\n\nContact Support:\n Name: Convai Developer Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:26:20.000Z",
+    "updatedAt": "2026-07-28T01:26:20.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-ebea9de2-91b5-455c-a9e8-05ff41baae24"
+  },
+  "item": [
+    {
+      "name": "character",
+      "item": [
+        {
+          "name": "getResponse",
+          "item": [
+            {
+              "name": "Get Character Response",
+              "id": "77b9f334-06a4-456a-91a7-2947dcfedb45",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "multipart/form-data"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": "(Required) User input as text. Use \"(USER_PERFORMED_ACTIONS)\" placeholder when sending audio.",
+                      "key": "userText",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "charID",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": "(Required) Use \"-1\" to start a new session",
+                      "key": "sessionID",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": "(Required) Whether to include audio in the response",
+                      "key": "voiceResponse",
+                      "value": "<boolean>",
+                      "type": "text"
+                    },
+                    {
+                      "description": "Optional audio file (wav) for voice input",
+                      "key": "file",
+                      "type": "file",
+                      "value": null
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/character/getResponse",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "character",
+                    "getResponse"
+                  ]
+                },
+                "description": "Send user input to a Convai character and receive its conversational\nresponse. Supports text and audio input, with audio, text, action, and\nemotion outputs. Use sessionID=\"-1\" to start a new conversation.\n"
+              },
+              "response": [
+                {
+                  "id": "2f75ef56-792d-4cd8-8e41-7c4a0ac8167e",
+                  "name": "Character response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "multipart/form-data"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "CONVAI-API-KEY",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "formdata",
+                      "formdata": [
+                        {
+                          "description": "(Required) User input as text. Use \"(USER_PERFORMED_ACTIONS)\" placeholder when sending audio.",
+                          "key": "userText",
+                          "value": "<string>",
+                          "type": "text"
+                        },
+                        {
+                          "description": "(Required) ",
+                          "key": "charID",
+                          "value": "<string>",
+                          "type": "text"
+                        },
+                        {
+                          "description": "(Required) Use \"-1\" to start a new session",
+                          "key": "sessionID",
+                          "value": "<string>",
+                          "type": "text"
+                        },
+                        {
+                          "description": "(Required) Whether to include audio in the response",
+                          "key": "voiceResponse",
+                          "value": "<boolean>",
+                          "type": "text"
+                        },
+                        {
+                          "description": "Optional audio file (wav) for voice input",
+                          "key": "file",
+                          "type": "file"
+                        }
+                      ]
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/character/getResponse",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "character",
+                        "getResponse"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"text\": \"<string>\",\n  \"audio\": \"<string>\",\n  \"sessionID\": \"<string>\",\n  \"action\": \"<string>\",\n  \"emotion\": \"<string>\",\n  \"narrativeSectionId\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T01:26:20.000Z",
+                  "updatedAt": "2026-07-28T01:26:20.000Z",
+                  "uid": "35240-2f75ef56-792d-4cd8-8e41-7c4a0ac8167e"
+                }
+              ],
+              "createdAt": "2026-07-28T01:26:20.000Z",
+              "updatedAt": "2026-07-28T01:26:20.000Z",
+              "uid": "35240-77b9f334-06a4-456a-91a7-2947dcfedb45"
+            }
+          ],
+          "id": "eae553c7-a2d8-42c8-9856-3940c7361cca",
+          "createdAt": "2026-07-28T01:26:20.000Z",
+          "updatedAt": "2026-07-28T01:26:20.000Z",
+          "uid": "35240-eae553c7-a2d8-42c8-9856-3940c7361cca"
+        }
+      ],
+      "id": "211bcf07-ad1c-4df7-a6b8-d26a0eaedc7c",
+      "createdAt": "2026-07-28T01:26:20.000Z",
+      "updatedAt": "2026-07-28T01:26:20.000Z",
+      "uid": "35240-211bcf07-ad1c-4df7-a6b8-d26a0eaedc7c"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "CONVAI-API-KEY",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.convai.com"
+    }
+  ]
+}

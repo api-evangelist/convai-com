@@ -1,0 +1,149 @@
+{
+  "info": {
+    "_postman_id": "cb5c57fe-7945-4203-9aa3-9d1db61935b1",
+    "name": "Convai Character Characters Live API",
+    "description": "REST API for creating, listing, updating, cloning, and deleting Convai\nconversational AI characters. Characters are reusable conversational agents\nwith backstory, voice, personality, language, and knowledge configuration\nthat can be embodied in games, virtual worlds, and 3D experiences via the\nUnity, Unreal, Web, and other Convai SDKs.\n\n\nContact Support:\n Name: Convai Developer Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:26:21.000Z",
+    "updatedAt": "2026-07-28T01:26:22.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-cb5c57fe-7945-4203-9aa3-9d1db61935b1"
+  },
+  "item": [
+    {
+      "name": "connect",
+      "item": [
+        {
+          "name": "Connect Live Session",
+          "id": "9e55627c-fea3-483a-87af-58c990418fcd",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"character_id\": \"<string>\",\n  \"session_id\": \"<string>\",\n  \"debug\": false,\n  \"audio_config\": {\n    \"output\": {\n      \"audio_routing\": \"media\"\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/connect",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "connect"
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "6cdc8bf5-1b25-48cc-b8bb-3ee0fab2e410",
+              "name": "Connection params (SDP, ICE servers, room info)",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "CONVAI-API-KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"character_id\": \"<string>\",\n  \"session_id\": \"<string>\",\n  \"debug\": false,\n  \"audio_config\": {\n    \"output\": {\n      \"audio_routing\": \"media\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/connect",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "connect"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"room_url\": \"<uri>\",\n  \"token\": \"<string>\",\n  \"sdp\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T01:26:22.000Z",
+              "updatedAt": "2026-07-28T01:26:22.000Z",
+              "uid": "35240-6cdc8bf5-1b25-48cc-b8bb-3ee0fab2e410"
+            }
+          ],
+          "createdAt": "2026-07-28T01:26:22.000Z",
+          "updatedAt": "2026-07-28T01:26:22.000Z",
+          "uid": "35240-9e55627c-fea3-483a-87af-58c990418fcd"
+        }
+      ],
+      "id": "1d061d53-d189-4e8e-abe7-5f8e51a85d4e",
+      "createdAt": "2026-07-28T01:26:22.000Z",
+      "updatedAt": "2026-07-28T01:26:22.000Z",
+      "uid": "35240-1d061d53-d189-4e8e-abe7-5f8e51a85d4e"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "CONVAI-API-KEY",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.convai.com"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "provider": "convai-com",
+  "sources": [
+    "convai-com-characters-api-openapi.yml",
+    "convai-com-chat-history-api-openapi.yml",
+    "convai-com-custom-llm-api-openapi.yml",
+    "convai-com-evaluation-api-openapi.yml",
+    "convai-com-interaction-api-openapi.yml",
+    "convai-com-knowledge-bank-api-openapi.yml",
+    "convai-com-live-api-openapi.yml",
+    "convai-com-narrative-api-openapi.yml",
+    "convai-com-streaming-api-openapi.yml",
+    "convai-com-tts-api-openapi.yml"
+  ],
+  "outputs": [
+    "convai-com-characters-api-openapi.yml",
+    "convai-com-chat-history-api-openapi.yml",
+    "convai-com-custom-llm-api-openapi.yml",
+    "convai-com-evaluation-api-openapi.yml",
+    "convai-com-interaction-api-openapi.yml",
+    "convai-com-knowledge-bank-api-openapi.yml",
+    "convai-com-live-api-openapi.yml",
+    "convai-com-narrative-api-openapi.yml",
+    "convai-com-streaming-api-openapi.yml",
+    "convai-com-tts-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

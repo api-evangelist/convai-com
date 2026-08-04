@@ -1,0 +1,426 @@
+{
+  "info": {
+    "_postman_id": "0dbd2825-f364-4c99-b4a9-ebfb4c9e8950",
+    "name": "Convai Character Characters Custom LLM API",
+    "description": "REST API for creating, listing, updating, cloning, and deleting Convai\nconversational AI characters. Characters are reusable conversational agents\nwith backstory, voice, personality, language, and knowledge configuration\nthat can be embodied in games, virtual worlds, and 3D experiences via the\nUnity, Unreal, Web, and other Convai SDKs.\n\n\nContact Support:\n Name: Convai Developer Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:26:18.000Z",
+    "updatedAt": "2026-07-28T01:26:18.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-0dbd2825-f364-4c99-b4a9-ebfb4c9e8950"
+  },
+  "item": [
+    {
+      "name": "custom-llm",
+      "item": [
+        {
+          "name": "register",
+          "item": [
+            {
+              "name": "Register Custom LLM",
+              "id": "07d58647-9ac0-43f3-a79c-3a6f073b4200",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"model_group_name\": \"<string>\",\n  \"model_name\": \"<string>\",\n  \"api_key\": \"<string>\",\n  \"base_url\": \"<uri>\",\n  \"is_uncensored\": false\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/custom-llm/register",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "custom-llm",
+                    "register"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "id": "b72af679-5fe3-48ad-9cd1-86956e1359ce",
+                  "name": "Registered",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "CONVAI-API-KEY",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"model_group_name\": \"<string>\",\n  \"model_name\": \"<string>\",\n  \"api_key\": \"<string>\",\n  \"base_url\": \"<uri>\",\n  \"is_uncensored\": false\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/custom-llm/register",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "custom-llm",
+                        "register"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T01:26:18.000Z",
+                  "updatedAt": "2026-07-28T01:26:18.000Z",
+                  "uid": "35240-b72af679-5fe3-48ad-9cd1-86956e1359ce"
+                }
+              ],
+              "createdAt": "2026-07-28T01:26:18.000Z",
+              "updatedAt": "2026-07-28T01:26:18.000Z",
+              "uid": "35240-07d58647-9ac0-43f3-a79c-3a6f073b4200"
+            }
+          ],
+          "id": "22de4c42-bc1b-4dcb-8b92-7417f9a9e3ba",
+          "createdAt": "2026-07-28T01:26:18.000Z",
+          "updatedAt": "2026-07-28T01:26:18.000Z",
+          "uid": "35240-22de4c42-bc1b-4dcb-8b92-7417f9a9e3ba"
+        },
+        {
+          "name": "update",
+          "item": [
+            {
+              "name": "Update Custom LLM",
+              "id": "19e1ab9d-b9be-4fe1-a681-c570ba131041",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"model_group_name\": \"<string>\",\n  \"model_name\": \"<string>\",\n  \"api_key\": \"<string>\",\n  \"base_url\": \"<uri>\",\n  \"is_uncensored\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/custom-llm/update",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "custom-llm",
+                    "update"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "id": "d30e2ee1-4c90-425c-960f-7a4694f70377",
+                  "name": "Updated",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "CONVAI-API-KEY",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"model_group_name\": \"<string>\",\n  \"model_name\": \"<string>\",\n  \"api_key\": \"<string>\",\n  \"base_url\": \"<uri>\",\n  \"is_uncensored\": \"<boolean>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/custom-llm/update",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "custom-llm",
+                        "update"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T01:26:18.000Z",
+                  "updatedAt": "2026-07-28T01:26:18.000Z",
+                  "uid": "35240-d30e2ee1-4c90-425c-960f-7a4694f70377"
+                }
+              ],
+              "createdAt": "2026-07-28T01:26:18.000Z",
+              "updatedAt": "2026-07-28T01:26:18.000Z",
+              "uid": "35240-19e1ab9d-b9be-4fe1-a681-c570ba131041"
+            }
+          ],
+          "id": "53a7a436-1fff-4d0e-b232-9dd3f8e6c2c3",
+          "createdAt": "2026-07-28T01:26:18.000Z",
+          "updatedAt": "2026-07-28T01:26:18.000Z",
+          "uid": "35240-53a7a436-1fff-4d0e-b232-9dd3f8e6c2c3"
+        },
+        {
+          "name": "deregister",
+          "item": [
+            {
+              "name": "Deregister Custom LLM",
+              "id": "bd7c2a7b-9d77-4414-9f66-dd4477de1287",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"model_group_name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/custom-llm/deregister",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "custom-llm",
+                    "deregister"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "id": "d2717111-5bde-49a0-800f-edc56b87d5f5",
+                  "name": "Deregistered",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "CONVAI-API-KEY",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"model_group_name\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/custom-llm/deregister",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "custom-llm",
+                        "deregister"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T01:26:18.000Z",
+                  "updatedAt": "2026-07-28T01:26:18.000Z",
+                  "uid": "35240-d2717111-5bde-49a0-800f-edc56b87d5f5"
+                }
+              ],
+              "createdAt": "2026-07-28T01:26:18.000Z",
+              "updatedAt": "2026-07-28T01:26:18.000Z",
+              "uid": "35240-bd7c2a7b-9d77-4414-9f66-dd4477de1287"
+            }
+          ],
+          "id": "2efe1a4e-ad80-44ff-a8ce-5ca81341b2db",
+          "createdAt": "2026-07-28T01:26:18.000Z",
+          "updatedAt": "2026-07-28T01:26:18.000Z",
+          "uid": "35240-2efe1a4e-ad80-44ff-a8ce-5ca81341b2db"
+        },
+        {
+          "name": "list",
+          "item": [
+            {
+              "name": "List Custom LLMs",
+              "id": "b112de97-c93c-498a-af9a-3cbe97161eff",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/custom-llm/list",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "custom-llm",
+                    "list"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "id": "9b8cb7e4-ae95-4c51-b95d-c329530d1ec3",
+                  "name": "Custom LLM list",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "CONVAI-API-KEY",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/custom-llm/list",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "custom-llm",
+                        "list"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "[\n  {\n    \"model_group_name\": \"<string>\",\n    \"model_name\": \"<string>\",\n    \"base_url\": \"<string>\"\n  },\n  {\n    \"model_group_name\": \"<string>\",\n    \"model_name\": \"<string>\",\n    \"base_url\": \"<string>\"\n  }\n]",
+                  "createdAt": "2026-07-28T01:26:18.000Z",
+                  "updatedAt": "2026-07-28T01:26:18.000Z",
+                  "uid": "35240-9b8cb7e4-ae95-4c51-b95d-c329530d1ec3"
+                }
+              ],
+              "createdAt": "2026-07-28T01:26:18.000Z",
+              "updatedAt": "2026-07-28T01:26:18.000Z",
+              "uid": "35240-b112de97-c93c-498a-af9a-3cbe97161eff"
+            }
+          ],
+          "id": "5350565f-5b5c-4fc0-8c62-1db33c190798",
+          "createdAt": "2026-07-28T01:26:18.000Z",
+          "updatedAt": "2026-07-28T01:26:18.000Z",
+          "uid": "35240-5350565f-5b5c-4fc0-8c62-1db33c190798"
+        }
+      ],
+      "id": "a612d93c-5f87-45ea-9cee-35bea7980ad5",
+      "createdAt": "2026-07-28T01:26:18.000Z",
+      "updatedAt": "2026-07-28T01:26:18.000Z",
+      "uid": "35240-a612d93c-5f87-45ea-9cee-35bea7980ad5"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "CONVAI-API-KEY",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.convai.com"
+    }
+  ]
+}

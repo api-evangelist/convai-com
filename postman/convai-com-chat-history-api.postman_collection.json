@@ -1,0 +1,284 @@
+{
+  "info": {
+    "_postman_id": "bc0aabe5-2b68-4ef8-9892-424aea9ce843",
+    "name": "Convai Character Characters Chat History API",
+    "description": "REST API for creating, listing, updating, cloning, and deleting Convai\nconversational AI characters. Characters are reusable conversational agents\nwith backstory, voice, personality, language, and knowledge configuration\nthat can be embodied in games, virtual worlds, and 3D experiences via the\nUnity, Unreal, Web, and other Convai SDKs.\n\n\nContact Support:\n Name: Convai Developer Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:26:17.000Z",
+    "updatedAt": "2026-07-28T01:26:17.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-bc0aabe5-2b68-4ef8-9892-424aea9ce843"
+  },
+  "item": [
+    {
+      "name": "character",
+      "item": [
+        {
+          "name": "chat-history",
+          "item": [
+            {
+              "name": "list-sessions",
+              "item": [
+                {
+                  "name": "List Character Sessions",
+                  "id": "cba51a4f-a652-40e7-b5a1-e22229122974",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"charID\": \"<string>\",\n  \"limit\": 50\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/character/chat-history/list-sessions",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "character",
+                        "chat-history",
+                        "list-sessions"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "id": "b6ac5683-6ac6-4001-9262-d252c4aeaa81",
+                      "name": "Session list",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "CONVAI-API-KEY",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"charID\": \"<string>\",\n  \"limit\": 50\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/character/chat-history/list-sessions",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "character",
+                            "chat-history",
+                            "list-sessions"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "[\n  {\n    \"sessionID\": \"<string>\",\n    \"startTime\": \"<dateTime>\",\n    \"duration\": \"<integer>\",\n    \"messageCount\": \"<integer>\"\n  },\n  {\n    \"sessionID\": \"<string>\",\n    \"startTime\": \"<dateTime>\",\n    \"duration\": \"<integer>\",\n    \"messageCount\": \"<integer>\"\n  }\n]",
+                      "createdAt": "2026-07-28T01:26:17.000Z",
+                      "updatedAt": "2026-07-28T01:26:17.000Z",
+                      "uid": "35240-b6ac5683-6ac6-4001-9262-d252c4aeaa81"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:26:17.000Z",
+                  "updatedAt": "2026-07-28T01:26:17.000Z",
+                  "uid": "35240-cba51a4f-a652-40e7-b5a1-e22229122974"
+                }
+              ],
+              "id": "21db59c0-71a2-4877-861e-de29b131c049",
+              "createdAt": "2026-07-28T01:26:17.000Z",
+              "updatedAt": "2026-07-28T01:26:17.000Z",
+              "uid": "35240-21db59c0-71a2-4877-861e-de29b131c049"
+            },
+            {
+              "name": "get-session",
+              "item": [
+                {
+                  "name": "Get Session Transcript",
+                  "id": "87540345-78e8-461f-97fb-60c271811e68",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"charID\": \"<string>\",\n  \"sessionID\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/character/chat-history/get-session",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "character",
+                        "chat-history",
+                        "get-session"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "id": "4231b5f4-5f26-430d-bae3-5715b40b0419",
+                      "name": "Session transcript",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "CONVAI-API-KEY",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"charID\": \"<string>\",\n  \"sessionID\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/character/chat-history/get-session",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "character",
+                            "chat-history",
+                            "get-session"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"sessionID\": \"<string>\",\n  \"interactions\": [\n    {\n      \"role\": \"user\",\n      \"text\": \"<string>\",\n      \"timestamp\": \"<dateTime>\"\n    },\n    {\n      \"role\": \"character\",\n      \"text\": \"<string>\",\n      \"timestamp\": \"<dateTime>\"\n    }\n  ]\n}",
+                      "createdAt": "2026-07-28T01:26:17.000Z",
+                      "updatedAt": "2026-07-28T01:26:17.000Z",
+                      "uid": "35240-4231b5f4-5f26-430d-bae3-5715b40b0419"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:26:17.000Z",
+                  "updatedAt": "2026-07-28T01:26:17.000Z",
+                  "uid": "35240-87540345-78e8-461f-97fb-60c271811e68"
+                }
+              ],
+              "id": "77950a61-c8c9-4b6a-80c8-4c21b679eb75",
+              "createdAt": "2026-07-28T01:26:17.000Z",
+              "updatedAt": "2026-07-28T01:26:17.000Z",
+              "uid": "35240-77950a61-c8c9-4b6a-80c8-4c21b679eb75"
+            }
+          ],
+          "id": "754ab8a6-9d7a-4d6c-ac41-0f23404aa3f5",
+          "createdAt": "2026-07-28T01:26:17.000Z",
+          "updatedAt": "2026-07-28T01:26:17.000Z",
+          "uid": "35240-754ab8a6-9d7a-4d6c-ac41-0f23404aa3f5"
+        }
+      ],
+      "id": "a5e11b90-f57b-4c1f-8585-ceedfb9fe8f8",
+      "createdAt": "2026-07-28T01:26:17.000Z",
+      "updatedAt": "2026-07-28T01:26:17.000Z",
+      "uid": "35240-a5e11b90-f57b-4c1f-8585-ceedfb9fe8f8"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "CONVAI-API-KEY",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.convai.com"
+    }
+  ]
+}
