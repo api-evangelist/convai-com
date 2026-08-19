@@ -1,0 +1,41 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Convai Character Characters Interaction API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "CONVAI-API-KEY",
+      "value": "{{CONVAI-API-KEY}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Interaction",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Character Response",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.convai.com/character/getResponse",
+            "body": {
+              "type": "multipart-form",
+              "data": []
+            }
+          },
+          "docs": "Send user input to a Convai character and receive its conversational\nresponse. Supports text and audio input, with audio, text, action, and\nemotion outputs. Use sessionID=\"-1\" to start a new conversation.\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

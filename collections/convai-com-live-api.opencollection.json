@@ -1,0 +1,41 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Convai Character Characters Live API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "CONVAI-API-KEY",
+      "value": "{{CONVAI-API-KEY}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Live",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Connect Live Session",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.convai.com/connect",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Connect Live Session"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,469 @@
+{
+  "item": [
+    {
+      "id": "fccb6ff5-283c-4613-aa3a-8afa55c30b2e",
+      "name": "Knowledge Bank",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b0c251dc-37ab-4839-bf8e-51cc5a1c5b12",
+          "name": "Upload Knowledge Bank Document",
+          "request": {
+            "name": "Upload Knowledge Bank Document",
+            "description": {},
+            "url": {
+              "path": [
+                "character",
+                "knowledge-bank",
+                "upload"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file_name",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "(Required) "
+                },
+                {
+                  "key": "file",
+                  "type": "file",
+                  "description": "(Required) "
+                },
+                {
+                  "key": "character_id",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "(Required) "
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "50dec7aa-ba99-4fa4-bed6-0f8687330bae",
+              "name": "Document uploaded",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "character",
+                    "knowledge-bank",
+                    "upload"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "CONVAI-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "file_name",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "file",
+                      "value": "<binary>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "character_id",
+                      "value": "<string>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"document_id\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "616ae1f3-3e10-4601-9efc-4b58b794be84",
+          "name": "Update Knowledge Bank Document",
+          "request": {
+            "name": "Update Knowledge Bank Document",
+            "description": {},
+            "url": {
+              "path": [
+                "character",
+                "knowledge-bank",
+                "update"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"document_id\": \"<string>\",\n  \"character_id\": \"<string>\",\n  \"docs\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7c4c9f37-3b3d-491d-95cc-d716f44acb93",
+              "name": "Updated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "character",
+                    "knowledge-bank",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "CONVAI-API-KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"document_id\": \"<string>\",\n  \"character_id\": \"<string>\",\n  \"docs\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "00966229-3d48-4886-9182-fd0de84352c5",
+          "name": "List Knowledge Bank Documents",
+          "request": {
+            "name": "List Knowledge Bank Documents",
+            "description": {},
+            "url": {
+              "path": [
+                "character",
+                "knowledge-bank",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"character_id\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "17ea8be8-36e7-4c1b-b558-0f76f8df614b",
+              "name": "Document list",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "character",
+                    "knowledge-bank",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "CONVAI-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"character_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"document_id\": \"string\",\n    \"file_name\": \"string\",\n    \"status\": \"string\"\n  },\n  {\n    \"document_id\": \"string\",\n    \"file_name\": \"string\",\n    \"status\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0adaf90c-8425-4654-9a01-1e7a171d5639",
+          "name": "Delete Knowledge Bank Document",
+          "request": {
+            "name": "Delete Knowledge Bank Document",
+            "description": {},
+            "url": {
+              "path": [
+                "character",
+                "knowledge-bank",
+                "delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"document_id\": \"<string>\",\n  \"character_id\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "30ed9065-93c5-48ad-b9fb-5232360e83bf",
+              "name": "Deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "character",
+                    "knowledge-bank",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "CONVAI-API-KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"document_id\": \"<string>\",\n  \"character_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.convai.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "CONVAI-API-KEY"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "7a40753a-c290-450e-9cff-440f582df26f",
+    "name": "Convai Character Characters Knowledge Bank API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for creating, listing, updating, cloning, and deleting Convai\nconversational AI characters. Characters are reusable conversational agents\nwith backstory, voice, personality, language, and knowledge configuration\nthat can be embodied in games, virtual worlds, and 3D experiences via the\nUnity, Unreal, Web, and other Convai SDKs.\n\n\nContact Support:\n Name: Convai Developer Support",
+      "type": "text/plain"
+    }
+  }
+}

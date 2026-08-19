@@ -1,0 +1,592 @@
+{
+  "item": [
+    {
+      "id": "ab9ec98f-3579-4a40-b418-94fb99fb8153",
+      "name": "Characters",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3d04f4d0-b8de-43ef-8201-152783cbd092",
+          "name": "Create Character",
+          "request": {
+            "name": "Create Character",
+            "description": {},
+            "url": {
+              "path": [
+                "character",
+                "create"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"charName\": \"<string>\",\n  \"voiceType\": \"<string>\",\n  \"backstory\": \"<string>\",\n  \"language\": \"en-us\",\n  \"timezone\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "19e61e2b-760c-41d6-9760-47f0fdba24a4",
+              "name": "Character created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "character",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "CONVAI-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"charName\": \"<string>\",\n  \"voiceType\": \"<string>\",\n  \"backstory\": \"<string>\",\n  \"language\": \"en-us\",\n  \"timezone\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"charID\": \"string\",\n  \"status\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bd9d26c8-b23a-4834-ae9f-49c372022604",
+          "name": "Get Character",
+          "request": {
+            "name": "Get Character",
+            "description": {},
+            "url": {
+              "path": [
+                "character",
+                "get"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"charID\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3de5a9da-f419-4fdd-8099-30d5f39ddce1",
+              "name": "Character details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "character",
+                    "get"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "CONVAI-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"charID\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"charID\": \"string\",\n  \"charName\": \"string\",\n  \"voiceType\": \"string\",\n  \"backstory\": \"string\",\n  \"language\": \"string\",\n  \"timestamp\": \"1955-05-23T02:14:33.722Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "84cb8642-d5e5-4392-871b-66bd1bf712d1",
+          "name": "Update Character",
+          "request": {
+            "name": "Update Character",
+            "description": {},
+            "url": {
+              "path": [
+                "character",
+                "update"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"charID\": \"<string>\",\n  \"charName\": \"<string>\",\n  \"voiceType\": \"<string>\",\n  \"backstory\": \"<string>\",\n  \"language\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "999e674d-c58a-4ee6-873c-ae6d8b1f5923",
+              "name": "Character updated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "character",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "CONVAI-API-KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"charID\": \"<string>\",\n  \"charName\": \"<string>\",\n  \"voiceType\": \"<string>\",\n  \"backstory\": \"<string>\",\n  \"language\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d1c97f45-ddac-4943-8fba-d2587e367a76",
+          "name": "List Characters",
+          "request": {
+            "name": "List Characters",
+            "description": {},
+            "url": {
+              "path": [
+                "character",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f49a5338-04e2-441e-9439-4a581051118c",
+              "name": "List of characters",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "character",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "CONVAI-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"charID\": \"string\",\n    \"charName\": \"string\",\n    \"voiceType\": \"string\",\n    \"backstory\": \"string\",\n    \"language\": \"string\",\n    \"timestamp\": \"1968-07-05T07:51:49.090Z\"\n  },\n  {\n    \"charID\": \"string\",\n    \"charName\": \"string\",\n    \"voiceType\": \"string\",\n    \"backstory\": \"string\",\n    \"language\": \"string\",\n    \"timestamp\": \"2002-04-19T18:59:15.316Z\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c1a13c20-6e28-4143-95ac-6d9b6df69d9e",
+          "name": "Delete Character",
+          "request": {
+            "name": "Delete Character",
+            "description": {},
+            "url": {
+              "path": [
+                "character",
+                "delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"charID\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "805a81ac-bcf6-44e0-bbe2-958f0b925048",
+              "name": "Character deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "character",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "CONVAI-API-KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"charID\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "71acfa32-4236-4fd7-a24d-e81f3d4e8786",
+          "name": "Clone Character",
+          "request": {
+            "name": "Clone Character",
+            "description": {},
+            "url": {
+              "path": [
+                "user",
+                "clone_character"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"charID\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1411a073-7d2d-46b5-888d-4fe3bd6e4f34",
+              "name": "Character cloned",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "user",
+                    "clone_character"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "CONVAI-API-KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"charID\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.convai.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "CONVAI-API-KEY"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "d2a31cb1-508b-4bf7-94b0-08d37f00aee2",
+    "name": "Convai Character Characters API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for creating, listing, updating, cloning, and deleting Convai\nconversational AI characters. Characters are reusable conversational agents\nwith backstory, voice, personality, language, and knowledge configuration\nthat can be embodied in games, virtual worlds, and 3D experiences via the\nUnity, Unreal, Web, and other Convai SDKs.\n\n\nContact Support:\n Name: Convai Developer Support",
+      "type": "text/plain"
+    }
+  }
+}

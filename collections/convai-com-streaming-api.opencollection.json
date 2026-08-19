@@ -1,0 +1,45 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Convai Character Characters Streaming API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "CONVAI-API-KEY",
+      "value": "{{CONVAI-API-KEY}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Streaming",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Open Streaming Transcription WebSocket",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.convai.com/stream",
+            "params": [
+              {
+                "name": "convai-api-key",
+                "value": "",
+                "type": "query",
+                "description": "Optional alternative to the header auth"
+              }
+            ]
+          },
+          "docs": "Upgrade to WebSocket. Send 16-bit PCM, mono, 16 kHz audio binary\nframes. Receive JSON transcript frames with `text`, `is_final`, and\n`confidence`. Authentication via `CONVAI-API-KEY` header or\n`?convai-api-key=` query parameter.\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

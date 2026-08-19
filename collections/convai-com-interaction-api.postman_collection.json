@@ -1,0 +1,216 @@
+{
+  "item": [
+    {
+      "id": "95b4bea6-658d-4b45-8e2a-451b5ee7065b",
+      "name": "Interaction",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2911bf3d-07ab-4d68-9d79-22e31a87a751",
+          "name": "Get Character Response",
+          "request": {
+            "name": "Get Character Response",
+            "description": {
+              "content": "Send user input to a Convai character and receive its conversational\nresponse. Supports text and audio input, with audio, text, action, and\nemotion outputs. Use sessionID=\"-1\" to start a new conversation.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "character",
+                "getResponse"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "userText",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "(Required) User input as text. Use \"(USER_PERFORMED_ACTIONS)\" placeholder when sending audio."
+                },
+                {
+                  "key": "charID",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "(Required) "
+                },
+                {
+                  "key": "sessionID",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "(Required) Use \"-1\" to start a new session"
+                },
+                {
+                  "key": "voiceResponse",
+                  "value": "<boolean>",
+                  "type": "text",
+                  "description": "(Required) Whether to include audio in the response"
+                },
+                {
+                  "key": "file",
+                  "type": "file",
+                  "description": "Optional audio file (wav) for voice input"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "a448ad03-670b-4d6e-bf0f-8b843d1d8c95",
+              "name": "Character response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "character",
+                    "getResponse"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "CONVAI-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) User input as text. Use \"(USER_PERFORMED_ACTIONS)\" placeholder when sending audio.",
+                        "type": "text/plain"
+                      },
+                      "key": "userText",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "charID",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "(Required) Use \"-1\" to start a new session",
+                        "type": "text/plain"
+                      },
+                      "key": "sessionID",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "(Required) Whether to include audio in the response",
+                        "type": "text/plain"
+                      },
+                      "key": "voiceResponse",
+                      "value": "<boolean>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Optional audio file (wav) for voice input",
+                        "type": "text/plain"
+                      },
+                      "key": "file",
+                      "value": "<binary>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"text\": \"string\",\n  \"audio\": \"string\",\n  \"sessionID\": \"string\",\n  \"action\": \"string\",\n  \"emotion\": \"string\",\n  \"narrativeSectionId\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.convai.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "CONVAI-API-KEY"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "69dfaf93-266a-4a69-9bbf-ff0c009c0389",
+    "name": "Convai Character Characters Interaction API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for creating, listing, updating, cloning, and deleting Convai\nconversational AI characters. Characters are reusable conversational agents\nwith backstory, voice, personality, language, and knowledge configuration\nthat can be embodied in games, virtual worlds, and 3D experiences via the\nUnity, Unreal, Web, and other Convai SDKs.\n\n\nContact Support:\n Name: Convai Developer Support",
+      "type": "text/plain"
+    }
+  }
+}

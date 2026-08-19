@@ -1,0 +1,112 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Convai Character Characters API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "CONVAI-API-KEY",
+      "value": "{{CONVAI-API-KEY}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Characters",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create Character",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.convai.com/character/create",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create Character"
+        },
+        {
+          "info": {
+            "name": "Get Character",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.convai.com/character/get",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get Character"
+        },
+        {
+          "info": {
+            "name": "Update Character",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.convai.com/character/update",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update Character"
+        },
+        {
+          "info": {
+            "name": "List Characters",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.convai.com/character/list"
+          },
+          "docs": "List Characters"
+        },
+        {
+          "info": {
+            "name": "Delete Character",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.convai.com/character/delete",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Delete Character"
+        },
+        {
+          "info": {
+            "name": "Clone Character",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.convai.com/user/clone_character",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Clone Character"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

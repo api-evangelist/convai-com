@@ -1,0 +1,191 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Convai Character Characters Narrative API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "CONVAI-API-KEY",
+      "value": "{{CONVAI-API-KEY}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Narrative",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Toggle Narrative Mode",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.convai.com/character/toggle-is-narrative-driven",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Toggle Narrative Mode"
+        },
+        {
+          "info": {
+            "name": "Create Narrative Section",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.convai.com/character/narrative/create-section",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create Narrative Section"
+        },
+        {
+          "info": {
+            "name": "Edit Narrative Section",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.convai.com/character/narrative/edit-section",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Edit Narrative Section"
+        },
+        {
+          "info": {
+            "name": "Get Narrative Section",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.convai.com/character/narrative/get-section",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get Narrative Section"
+        },
+        {
+          "info": {
+            "name": "List Narrative Sections",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.convai.com/character/narrative/list-sections",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "List Narrative Sections"
+        },
+        {
+          "info": {
+            "name": "Delete Narrative Section",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.convai.com/character/narrative/delete-section",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Delete Narrative Section"
+        },
+        {
+          "info": {
+            "name": "Create Narrative Trigger",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.convai.com/character/narrative/create-trigger",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create Narrative Trigger"
+        },
+        {
+          "info": {
+            "name": "Update Narrative Trigger",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.convai.com/character/narrative/update-trigger",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update Narrative Trigger"
+        },
+        {
+          "info": {
+            "name": "Get Narrative Trigger",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.convai.com/character/narrative/get-trigger",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get Narrative Trigger"
+        },
+        {
+          "info": {
+            "name": "List Narrative Triggers",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.convai.com/character/narrative/list-triggers",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "List Narrative Triggers"
+        },
+        {
+          "info": {
+            "name": "Delete Narrative Trigger",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.convai.com/character/narrative/delete-trigger",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Delete Narrative Trigger"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

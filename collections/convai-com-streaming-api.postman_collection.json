@@ -1,0 +1,129 @@
+{
+  "item": [
+    {
+      "id": "2d436c17-db7a-4d8e-b3d7-c8d45f2b271a",
+      "name": "Streaming",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "13f9b807-3bad-4ed3-9925-166461d91779",
+          "name": "Open Streaming Transcription WebSocket",
+          "request": {
+            "name": "Open Streaming Transcription WebSocket",
+            "description": {
+              "content": "Upgrade to WebSocket. Send 16-bit PCM, mono, 16 kHz audio binary\nframes. Receive JSON transcript frames with `text`, `is_final`, and\n`confidence`. Authentication via `CONVAI-API-KEY` header or\n`?convai-api-key=` query parameter.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "stream"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "convai-api-key",
+                  "value": "<string>",
+                  "description": "Optional alternative to the header auth"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "06fd07c2-9c3a-42bf-ad10-02293c08d2d4",
+              "name": "Switching Protocols (WebSocket upgrade)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "stream"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "convai-api-key",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "CONVAI-API-KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Switching Protocols",
+              "code": 101,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.convai.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "CONVAI-API-KEY"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "918caeaa-bd32-493c-ac89-11ab505c9050",
+    "name": "Convai Character Characters Streaming API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for creating, listing, updating, cloning, and deleting Convai\nconversational AI characters. Characters are reusable conversational agents\nwith backstory, voice, personality, language, and knowledge configuration\nthat can be embodied in games, virtual worlds, and 3D experiences via the\nUnity, Unreal, Web, and other Convai SDKs.\n\n\nContact Support:\n Name: Convai Developer Support",
+      "type": "text/plain"
+    }
+  }
+}
