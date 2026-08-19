@@ -338,7 +338,7 @@ maintainers:
     url: https://apievangelist.com
 created: '2026-05-25'
 modified: '2026-05-25'
-specificationVersion: '0.18'
+specificationVersion: '0.23'
 overlays:
   - type: APIs.io Search
     url: overlay/apis-io-search.yml
