@@ -193,6 +193,17 @@ apis:
     url: https://docs.convai.com/api-docs/api-reference/live-api-reference
 name: Convai
 tags:
+  - Artificial Intelligence
+  - Conversational AI
+  - Characters
+  - NPCs
+  - Virtual Worlds
+  - Games
+  - Avatars
+  - Speech
+  - TTS
+  - WebRTC
+tags_raw:
   - AI
   - Conversational AI
   - Characters
