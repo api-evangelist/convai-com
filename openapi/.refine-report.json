@@ -1,16 +1,16 @@
 {
   "provider": "convai-com",
   "sources": [
-    "convai-com-characters-api-openapi.yml",
-    "convai-com-chat-history-api-openapi.yml",
-    "convai-com-custom-llm-api-openapi.yml",
-    "convai-com-evaluation-api-openapi.yml",
-    "convai-com-interaction-api-openapi.yml",
-    "convai-com-knowledge-bank-api-openapi.yml",
-    "convai-com-live-api-openapi.yml",
-    "convai-com-narrative-api-openapi.yml",
-    "convai-com-streaming-api-openapi.yml",
-    "convai-com-tts-api-openapi.yml"
+    "_original/convai-character-api-openapi.yml",
+    "_original/convai-chat-history-api-openapi.yml",
+    "_original/convai-custom-llm-api-openapi.yml",
+    "_original/convai-evaluation-api-openapi.yml",
+    "_original/convai-interaction-api-openapi.yml",
+    "_original/convai-knowledge-bank-api-openapi.yml",
+    "_original/convai-live-api-openapi.yml",
+    "_original/convai-narrative-design-api-openapi.yml",
+    "_original/convai-streaming-transcription-api-openapi.yml",
+    "_original/convai-tts-api-openapi.yml"
   ],
   "outputs": [
     "convai-com-characters-api-openapi.yml",
@@ -27,6 +27,39 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (10 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "convai-character-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "convai-character-api-openapi.yml: declared missing tag: Characters",
+    "convai-chat-history-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "convai-chat-history-api-openapi.yml: declared missing tag: Chat History",
+    "convai-custom-llm-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "convai-custom-llm-api-openapi.yml: declared missing tag: Custom LLM",
+    "convai-evaluation-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "convai-evaluation-api-openapi.yml: declared missing tag: Evaluation",
+    "convai-interaction-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "convai-interaction-api-openapi.yml: declared missing tag: Interaction",
+    "convai-knowledge-bank-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "convai-knowledge-bank-api-openapi.yml: declared missing tag: Knowledge Bank",
+    "convai-live-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "convai-live-api-openapi.yml: declared missing tag: Live",
+    "convai-narrative-design-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "convai-narrative-design-api-openapi.yml: declared missing tag: Narrative",
+    "convai-streaming-transcription-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "convai-streaming-transcription-api-openapi.yml: declared missing tag: Streaming",
+    "convai-tts-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "convai-tts-api-openapi.yml: declared missing tag: TTS"
+  ],
+  "skipped": [
+    "convai-com-characters-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "convai-com-chat-history-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "convai-com-custom-llm-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "convai-com-evaluation-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "convai-com-interaction-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "convai-com-knowledge-bank-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "convai-com-live-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "convai-com-narrative-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "convai-com-streaming-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "convai-com-tts-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

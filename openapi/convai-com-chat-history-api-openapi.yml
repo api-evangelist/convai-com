@@ -1,24 +1,16 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Convai Character Characters Chat History API
+  title: Convai Chat History API
   version: '1.0'
-  description: 'REST API for creating, listing, updating, cloning, and deleting Convai
+  description: 'Retrieve historical conversation sessions and full interaction transcripts
 
-    conversational AI characters. Characters are reusable conversational agents
+    for Convai characters. Used for analytics, debugging, evaluation, and
 
-    with backstory, voice, personality, language, and knowledge configuration
-
-    that can be embodied in games, virtual worlds, and 3D experiences via the
-
-    Unity, Unreal, Web, and other Convai SDKs.
+    auditing of NPC conversations. Scale tier and above.
 
     '
-  contact:
-    name: Convai Developer Support
-    url: https://forum.convai.com
 servers:
 - url: https://api.convai.com
-  description: Convai REST API
 security:
 - ConvaiApiKey: []
 tags:

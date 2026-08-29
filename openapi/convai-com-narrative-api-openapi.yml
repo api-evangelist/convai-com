@@ -1,24 +1,18 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Convai Character Characters Narrative API
+  title: Convai Design Narrative API
   version: '1.0'
-  description: 'REST API for creating, listing, updating, cloning, and deleting Convai
+  description: 'Configure narrative-driven characters using sections and triggers. Sections
 
-    conversational AI characters. Characters are reusable conversational agents
+    define discrete narrative beats; triggers move the character between
 
-    with backstory, voice, personality, language, and knowledge configuration
+    sections based on conditions. Used to build branching, scripted experiences
 
-    that can be embodied in games, virtual worlds, and 3D experiences via the
-
-    Unity, Unreal, Web, and other Convai SDKs.
+    on top of Convai''s conversational AI.
 
     '
-  contact:
-    name: Convai Developer Support
-    url: https://forum.convai.com
 servers:
 - url: https://api.convai.com
-  description: Convai REST API
 security:
 - ConvaiApiKey: []
 tags:
@@ -275,22 +269,6 @@ paths:
           description: Trigger deleted
 components:
   schemas:
-    Trigger:
-      type: object
-      required:
-      - character_id
-      - trigger_name
-      properties:
-        character_id:
-          type: string
-        trigger_id:
-          type: string
-        trigger_name:
-          type: string
-        trigger_message:
-          type: string
-        destination_section:
-          type: string
     Section:
       type: object
       required:
@@ -310,6 +288,22 @@ components:
           type: string
         updates_player_persona:
           type: boolean
+    Trigger:
+      type: object
+      required:
+      - character_id
+      - trigger_name
+      properties:
+        character_id:
+          type: string
+        trigger_id:
+          type: string
+        trigger_name:
+          type: string
+        trigger_message:
+          type: string
+        destination_section:
+          type: string
   securitySchemes:
     ConvaiApiKey:
       type: apiKey

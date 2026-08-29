@@ -1,26 +1,22 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Convai Character Characters Live API
-  version: '1.0'
-  description: 'REST API for creating, listing, updating, cloning, and deleting Convai
+  title: Convai Live API
+  version: 1.0-beta
+  description: 'Beta Live API for ultra-low-latency, fully duplex character sessions over
 
-    conversational AI characters. Characters are reusable conversational agents
+    WebRTC. The /connect endpoint establishes a session and returns SDP/peer
 
-    with backstory, voice, personality, language, and knowledge configuration
+    configuration; subsequent audio and event messages flow over WebRTC data
 
-    that can be embodied in games, virtual worlds, and 3D experiences via the
+    channels (RTVI message format) and media tracks. Supports metrics and
 
-    Unity, Unreal, Web, and other Convai SDKs.
+    server-side audio data channels.
 
     '
-  contact:
-    name: Convai Developer Support
-    url: https://forum.convai.com
 servers:
-- url: https://api.convai.com
-  description: Convai REST API
+- url: https://live.convai.com
 security:
-- ConvaiApiKey: []
+- LiveApiKey: []
 tags:
 - name: Live
 paths:
@@ -75,7 +71,7 @@ paths:
                     type: string
 components:
   securitySchemes:
-    ConvaiApiKey:
+    LiveApiKey:
       type: apiKey
       in: header
-      name: CONVAI-API-KEY
+      name: X-API-Key

@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Convai Character Characters API
   version: '1.0'
@@ -139,22 +139,6 @@ paths:
           description: Character cloned
 components:
   schemas:
-    Character:
-      type: object
-      properties:
-        charID:
-          type: string
-        charName:
-          type: string
-        voiceType:
-          type: string
-        backstory:
-          type: string
-        language:
-          type: string
-        timestamp:
-          type: string
-          format: date-time
     CharacterCreateRequest:
       type: object
       required:
@@ -174,13 +158,6 @@ components:
           default: en-us
         timezone:
           type: string
-    CharacterCreateResponse:
-      type: object
-      properties:
-        charID:
-          type: string
-        status:
-          type: string
     CharacterUpdateRequest:
       type: object
       required:
@@ -195,6 +172,29 @@ components:
         backstory:
           type: string
         language:
+          type: string
+    Character:
+      type: object
+      properties:
+        charID:
+          type: string
+        charName:
+          type: string
+        voiceType:
+          type: string
+        backstory:
+          type: string
+        language:
+          type: string
+        timestamp:
+          type: string
+          format: date-time
+    CharacterCreateResponse:
+      type: object
+      properties:
+        charID:
+          type: string
+        status:
           type: string
   securitySchemes:
     ConvaiApiKey:

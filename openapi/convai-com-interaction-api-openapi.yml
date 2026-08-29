@@ -1,24 +1,20 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Convai Character Characters Interaction API
+  title: Convai Interaction API
   version: '1.0'
-  description: 'REST API for creating, listing, updating, cloning, and deleting Convai
+  description: 'The Interaction API is the runtime conversational endpoint for Convai
 
-    conversational AI characters. Characters are reusable conversational agents
+    characters. Send user text or audio with a sessionID and characterID and
 
-    with backstory, voice, personality, language, and knowledge configuration
+    receive the character''s spoken and animated response, including text reply,
 
-    that can be embodied in games, virtual worlds, and 3D experiences via the
+    audio bytes, action triggers, emotion state, and lip-sync data. This is the
 
-    Unity, Unreal, Web, and other Convai SDKs.
+    endpoint that powers in-game and in-world NPC conversations.
 
     '
-  contact:
-    name: Convai Developer Support
-    url: https://forum.convai.com
 servers:
 - url: https://api.convai.com
-  description: Convai REST API
 security:
 - ConvaiApiKey: []
 tags:
@@ -52,6 +48,24 @@ paths:
                 $ref: '#/components/schemas/GetResponseResponse'
 components:
   schemas:
+    GetResponseResponse:
+      type: object
+      properties:
+        text:
+          type: string
+          description: Character text reply
+        audio:
+          type: string
+          format: byte
+          description: Base64-encoded audio response
+        sessionID:
+          type: string
+        action:
+          type: string
+        emotion:
+          type: string
+        narrativeSectionId:
+          type: string
     GetResponseRequest:
       type: object
       required:
@@ -75,24 +89,6 @@ components:
           type: string
           format: binary
           description: Optional audio file (wav) for voice input
-    GetResponseResponse:
-      type: object
-      properties:
-        text:
-          type: string
-          description: Character text reply
-        audio:
-          type: string
-          format: byte
-          description: Base64-encoded audio response
-        sessionID:
-          type: string
-        action:
-          type: string
-        emotion:
-          type: string
-        narrativeSectionId:
-          type: string
   securitySchemes:
     ConvaiApiKey:
       type: apiKey
