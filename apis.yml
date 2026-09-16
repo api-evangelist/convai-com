@@ -193,27 +193,27 @@ apis:
     url: https://docs.convai.com/api-docs/api-reference/live-api-reference
 name: Convai
 tags:
-  - Artificial Intelligence
-  - Conversational AI
-  - Characters
-  - NPCs
-  - Virtual Worlds
-  - Games
-  - Avatars
-  - Speech
-  - TTS
-  - WebRTC
+- Artificial Intelligence
+- Conversational AI
+- Characters
+- NPCs
+- Virtual Worlds
+- Games
+- Avatars
+- Speech
+- TTS
+- WebRTC
 tags_raw:
-  - AI
-  - Conversational AI
-  - Characters
-  - NPCs
-  - Virtual Worlds
-  - Games
-  - Avatars
-  - Speech
-  - TTS
-  - WebRTC
+- AI
+- Conversational AI
+- Characters
+- NPCs
+- Virtual Worlds
+- Games
+- Avatars
+- Speech
+- TTS
+- WebRTC
 kind: contract
 deliveryModel:
   model: saas
@@ -244,130 +244,132 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/convai-com.png
 access: 3rd-Party
 common:
-  - type: Website
-    url: https://www.convai.com/
-  - type: PostmanWorkspace
-    url: https://www.postman.com/kinlaneapi/convai/overview
-  - type: AgenticAccess
-    url: agentic-access/convai-com-agentic-access.yml
-  - type: DomainSecurity
-    url: security/convai-com-domain-security.yml
-  - type: Authentication
-    url: authentication/convai-com-authentication.yml
-  - url: https://convai.com
-    name: Portal — convai.com
-    type: Portal
-  - url: https://convai.com/playground
-    name: Convai Playground
-    type: Sandbox
-  - url: https://docs.convai.com
-    name: Documentation — docs.convai.com
-    type: Documentation
-  - url: https://docs.convai.com/api-docs/welcome
-    name: API Documentation
-    type: Documentation
-  - url: https://docs.convai.com/api-docs/api-reference/core-api-reference
-    name: Core API Reference
-    type: Documentation
-  - url: https://convai.com/pricing
-    name: Pricing
-    type: Pricing
-  - url: https://github.com/Conv-AI
-    name: GitHub Organization
-    type: GitHubOrganization
-  - url: https://forum.convai.com
-    name: Convai Developer Forum
-    type: Forums
-  - url: https://convai.com/blog
-    name: Blog
-    type: Blog
-  - url: https://convai.com/about
-    name: About
-    type: About
-  - url: https://convai.com/contact-sales
-    name: Contact Sales
-    type: ContactSales
-  - url: https://convai.com/terms-of-service
-    name: Terms of Service
-    type: TermsOfService
-  - url: https://convai.com/privacy-policy
-    name: Privacy Policy
-    type: PrivacyPolicy
-  - url: https://github.com/Conv-AI/Convai-UnrealEngine-SDK-V4
-    name: SDK — Unreal Engine (V4)
-    type: SDKs
-  - url: https://github.com/Conv-AI/Convai-UnrealEngine-SDK
-    name: SDK — Unreal Engine (Legacy)
-    type: SDKs
-  - url: https://github.com/Conv-AI/Convai-Web-SDK-Old
-    name: SDK — Web (Legacy)
-    type: SDKs
-  - url: https://github.com/Conv-AI/Convai-JS-SDK-Alpha
-    name: SDK — JavaScript (Alpha, archived)
-    type: SDKs
-  - url: https://docs.convai.com/api-docs/plugins-and-integrations/unity-plugin
-    name: Plugin — Unity
-    type: Integrations
-  - url: https://docs.convai.com/api-docs/plugins-and-integrations/unreal-engine-plugin
-    name: Plugin — Unreal Engine
-    type: Integrations
-  - url: https://docs.convai.com/api-docs/plugins-and-integrations/web-plugin
-    name: Plugin — Web SDK (React and Vanilla TS)
-    type: Integrations
-  - url: https://docs.convai.com/api-docs/plugins-and-integrations/playcanvas-plugin
-    name: Plugin — PlayCanvas
-    type: Integrations
-  - url: https://docs.convai.com/api-docs/plugins-and-integrations/roblox
-    name: Plugin — Roblox
-    type: Integrations
-  - url: https://docs.convai.com/api-docs/plugins-and-integrations/discord
-    name: Plugin — Discord Bot
-    type: Integrations
-  - url: https://docs.convai.com/api-docs/plugins-and-integrations/omniverse
-    name: Plugin — NVIDIA Omniverse
-    type: Integrations
-  - url: https://docs.convai.com/api-docs/plugins-and-integrations/pixel-streaming
-    name: Plugin — Pixel Streaming Embed
-    type: Integrations
-  - url: https://github.com/Conv-AI/convai-analytics
-    name: Tool — Analytics (MCP server, SDKs, CLI)
-    type: Tools
-  - url: https://github.com/Conv-AI/convai-evals
-    name: Tool — Evaluation Toolkit
-    type: Tools
-  - url: https://github.com/Conv-AI/Convai-UnrealEngine-ModdingTool
-    name: Tool — Unreal Modding Tool
-    type: Tools
-  - url: https://github.com/Conv-AI/Convai-UnrealEngine-PakManager
-    name: Tool — Unreal Pak Manager
-    type: Tools
-  - url: plans/convai-plans-pricing.yml
-    name: API Commons Plans
-    type: Pricing
-  - url: rate-limits/convai-rate-limits.yml
-    name: API Commons Rate Limits
-    type: RateLimits
-  - url: finops/convai-finops.yml
-    name: FinOps
-    type: FinOps
+- type: Website
+  url: https://www.convai.com/
+- type: PostmanWorkspace
+  url: https://www.postman.com/kinlaneapi/convai/overview
+- type: AgenticAccess
+  url: agentic-access/convai-com-agentic-access.yml
+- type: DomainSecurity
+  url: security/convai-com-domain-security.yml
+- type: Authentication
+  url: authentication/convai-com-authentication.yml
+- url: https://convai.com
+  name: Portal — convai.com
+  type: Portal
+- url: https://convai.com/playground
+  name: Convai Playground
+  type: Sandbox
+- url: https://docs.convai.com
+  name: Documentation — docs.convai.com
+  type: Documentation
+- url: https://docs.convai.com/api-docs/welcome
+  name: API Documentation
+  type: Documentation
+- url: https://docs.convai.com/api-docs/api-reference/core-api-reference
+  name: Core API Reference
+  type: Documentation
+- url: https://convai.com/pricing
+  name: Pricing
+  type: Pricing
+- url: https://github.com/Conv-AI
+  name: GitHub Organization
+  type: GitHubOrganization
+- url: https://forum.convai.com
+  name: Convai Developer Forum
+  type: Forums
+- url: https://convai.com/blog
+  name: Blog
+  type: Blog
+- url: https://convai.com/about
+  name: About
+  type: About
+- url: https://convai.com/contact-sales
+  name: Contact Sales
+  type: ContactSales
+- url: https://convai.com/terms-of-service
+  name: Terms of Service
+  type: TermsOfService
+- url: https://convai.com/privacy-policy
+  name: Privacy Policy
+  type: PrivacyPolicy
+- url: https://github.com/Conv-AI/Convai-UnrealEngine-SDK-V4
+  name: SDK — Unreal Engine (V4)
+  type: SDKs
+- url: https://github.com/Conv-AI/Convai-UnrealEngine-SDK
+  name: SDK — Unreal Engine (Legacy)
+  type: SDKs
+- url: https://github.com/Conv-AI/Convai-Web-SDK-Old
+  name: SDK — Web (Legacy)
+  type: SDKs
+- url: https://github.com/Conv-AI/Convai-JS-SDK-Alpha
+  name: SDK — JavaScript (Alpha, archived)
+  type: SDKs
+- url: https://docs.convai.com/api-docs/plugins-and-integrations/unity-plugin
+  name: Plugin — Unity
+  type: Integrations
+- url: https://docs.convai.com/api-docs/plugins-and-integrations/unreal-engine-plugin
+  name: Plugin — Unreal Engine
+  type: Integrations
+- url: https://docs.convai.com/api-docs/plugins-and-integrations/web-plugin
+  name: Plugin — Web SDK (React and Vanilla TS)
+  type: Integrations
+- url: https://docs.convai.com/api-docs/plugins-and-integrations/playcanvas-plugin
+  name: Plugin — PlayCanvas
+  type: Integrations
+- url: https://docs.convai.com/api-docs/plugins-and-integrations/roblox
+  name: Plugin — Roblox
+  type: Integrations
+- url: https://docs.convai.com/api-docs/plugins-and-integrations/discord
+  name: Plugin — Discord Bot
+  type: Integrations
+- url: https://docs.convai.com/api-docs/plugins-and-integrations/omniverse
+  name: Plugin — NVIDIA Omniverse
+  type: Integrations
+- url: https://docs.convai.com/api-docs/plugins-and-integrations/pixel-streaming
+  name: Plugin — Pixel Streaming Embed
+  type: Integrations
+- url: https://github.com/Conv-AI/convai-analytics
+  name: Tool — Analytics (MCP server, SDKs, CLI)
+  type: Tools
+- url: https://github.com/Conv-AI/convai-evals
+  name: Tool — Evaluation Toolkit
+  type: Tools
+- url: https://github.com/Conv-AI/Convai-UnrealEngine-ModdingTool
+  name: Tool — Unreal Modding Tool
+  type: Tools
+- url: https://github.com/Conv-AI/Convai-UnrealEngine-PakManager
+  name: Tool — Unreal Pak Manager
+  type: Tools
+- url: plans/convai-plans-pricing.yml
+  name: API Commons Plans
+  type: Pricing
+- url: rate-limits/convai-rate-limits.yml
+  name: API Commons Rate Limits
+  type: RateLimits
+- url: finops/convai-finops.yml
+  name: FinOps
+  type: FinOps
 score:
   rank: Tier-1
-  rationale: >-
-    Real REST API at api.convai.com with documented endpoints across characters, interaction, knowledge bank, narrative
-    design, TTS, chat history, custom LLM, and evaluation; WebSocket streaming transcription at transcribe.convai.com;
-    beta WebRTC Live API at live.convai.com; first-party SDKs for Unreal Engine, Unity, Web, PlayCanvas, with
-    integrations for Roblox, Discord, and NVIDIA Omniverse; published forum, pricing tiers, and GitHub org under
-    Conv-AI.
+  rationale: Real REST API at api.convai.com with documented endpoints across characters, interaction,
+    knowledge bank, narrative design, TTS, chat history, custom LLM, and evaluation; WebSocket streaming
+    transcription at transcribe.convai.com; beta WebRTC Live API at live.convai.com; first-party SDKs
+    for Unreal Engine, Unity, Web, PlayCanvas, with integrations for Roblox, Discord, and NVIDIA Omniverse;
+    published forum, pricing tiers, and GitHub org under Conv-AI.
 maintainers:
-  - FN: Kin Lane
-    email: info@apievangelist.com
-    url: https://apievangelist.com
+- FN: Kin Lane
+  email: info@apievangelist.com
+  url: https://apievangelist.com
 created: '2026-05-25'
-modified: '2026-05-25'
+modified: '2026-09-15'
 specificationVersion: '0.23'
 overlays:
-  - type: APIs.io Search
-    url: overlay/apis-io-search.yml
-  - type: APIs.json Profile
-    url: overlay/apis-json-profile.yml
+- type: APIs.io Search
+  url: overlay/apis-io-search.yml
+- type: APIs.json Profile
+  url: overlay/apis-json-profile.yml
 type: Index
+description: Convai builds conversational AI for interactive characters in games and virtual worlds. Its
+  API covers character creation and configuration, chat sessions and history, knowledge banks, speech
+  and text-to-speech, custom LLM integration and evaluation.
