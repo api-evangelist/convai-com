@@ -6,9 +6,7 @@ info:
 
     reasoning backbone for Convai characters. Lets Enterprise customers route
 
-    character responses through their own model deployments. Enterprise tier.
-
-    '
+    character responses through their own model deployments. Enterprise tier.'
 servers:
 - url: https://api.convai.com
 security:

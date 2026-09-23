@@ -10,9 +10,7 @@ info:
 
     audio bytes, action triggers, emotion state, and lip-sync data. This is the
 
-    endpoint that powers in-game and in-world NPC conversations.
-
-    '
+    endpoint that powers in-game and in-world NPC conversations.'
 servers:
 - url: https://api.convai.com
 security:
@@ -30,9 +28,7 @@ paths:
 
         response. Supports text and audio input, with audio, text, action, and
 
-        emotion outputs. Use sessionID="-1" to start a new conversation.
-
-        '
+        emotion outputs. Use sessionID="-1" to start a new conversation.'
       requestBody:
         required: true
         content:

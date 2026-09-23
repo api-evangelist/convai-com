@@ -10,9 +10,7 @@ info:
 
     channels (RTVI message format) and media tracks. Supports metrics and
 
-    server-side audio data channels.
-
-    '
+    server-side audio data channels.'
 servers:
 - url: https://live.convai.com
 security:

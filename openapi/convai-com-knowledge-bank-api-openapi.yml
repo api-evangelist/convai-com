@@ -6,9 +6,7 @@ info:
 
     characters. Upload PDFs, text, and other docs that characters will
 
-    reference when generating responses. Enterprise tier.
-
-    '
+    reference when generating responses. Enterprise tier.'
 servers:
 - url: https://api.convai.com
 security:

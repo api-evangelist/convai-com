@@ -6,9 +6,7 @@ info:
 
     rubric variables. Used to measure NPC quality, role-fidelity, safety, and
 
-    objective completion. Professional tier and above.
-
-    '
+    objective completion. Professional tier and above.'
 servers:
 - url: https://api.convai.com
 security:

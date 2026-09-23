@@ -8,9 +8,7 @@ info:
 
     sections based on conditions. Used to build branching, scripted experiences
 
-    on top of Convai''s conversational AI.
-
-    '
+    on top of Convai''s conversational AI.'
 servers:
 - url: https://api.convai.com
 security:

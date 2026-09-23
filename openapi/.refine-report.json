@@ -48,7 +48,8 @@
     "convai-streaming-transcription-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
     "convai-streaming-transcription-api-openapi.yml: declared missing tag: Streaming",
     "convai-tts-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "convai-tts-api-openapi.yml: declared missing tag: TTS"
+    "convai-tts-api-openapi.yml: declared missing tag: TTS",
+    "apis.yml register: already-registered"
   ],
   "skipped": [
     "convai-com-characters-api-openapi.yml: previously refined output, superseded by openapi/_original/",

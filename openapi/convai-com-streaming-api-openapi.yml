@@ -10,9 +10,7 @@ info:
 
     documented here as an OpenAPI definition for discoverability; the live
 
-    transport is wss://transcribe.convai.com/stream.
-
-    '
+    transport is wss://transcribe.convai.com/stream.'
 servers:
 - url: https://transcribe.convai.com
 security:
@@ -32,9 +30,7 @@ paths:
 
         `confidence`. Authentication via `CONVAI-API-KEY` header or
 
-        `?convai-api-key=` query parameter.
-
-        '
+        `?convai-api-key=` query parameter.'
       parameters:
       - in: query
         name: convai-api-key

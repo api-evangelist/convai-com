@@ -8,9 +8,7 @@ info:
 
     flows. Voice catalog and supported languages are queryable via the TTS
 
-    listing endpoints. Enterprise tier.
-
-    '
+    listing endpoints. Enterprise tier.'
 servers:
 - url: https://api.convai.com
 security:

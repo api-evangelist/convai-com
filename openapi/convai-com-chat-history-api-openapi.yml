@@ -6,9 +6,7 @@ info:
 
     for Convai characters. Used for analytics, debugging, evaluation, and
 
-    auditing of NPC conversations. Scale tier and above.
-
-    '
+    auditing of NPC conversations. Scale tier and above.'
 servers:
 - url: https://api.convai.com
 security:

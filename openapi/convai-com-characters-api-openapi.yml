@@ -10,9 +10,7 @@ info:
 
     that can be embodied in games, virtual worlds, and 3D experiences via the
 
-    Unity, Unreal, Web, and other Convai SDKs.
-
-    '
+    Unity, Unreal, Web, and other Convai SDKs.'
   contact:
     name: Convai Developer Support
     url: https://forum.convai.com
@@ -139,6 +137,44 @@ paths:
           description: Character cloned
 components:
   schemas:
+    Character:
+      type: object
+      properties:
+        charID:
+          type: string
+        charName:
+          type: string
+        voiceType:
+          type: string
+        backstory:
+          type: string
+        language:
+          type: string
+        timestamp:
+          type: string
+          format: date-time
+    CharacterUpdateRequest:
+      type: object
+      required:
+      - charID
+      properties:
+        charID:
+          type: string
+        charName:
+          type: string
+        voiceType:
+          type: string
+        backstory:
+          type: string
+        language:
+          type: string
+    CharacterCreateResponse:
+      type: object
+      properties:
+        charID:
+          type: string
+        status:
+          type: string
     CharacterCreateRequest:
       type: object
       required:
@@ -157,44 +193,6 @@ components:
           type: string
           default: en-us
         timezone:
-          type: string
-    CharacterUpdateRequest:
-      type: object
-      required:
-      - charID
-      properties:
-        charID:
-          type: string
-        charName:
-          type: string
-        voiceType:
-          type: string
-        backstory:
-          type: string
-        language:
-          type: string
-    Character:
-      type: object
-      properties:
-        charID:
-          type: string
-        charName:
-          type: string
-        voiceType:
-          type: string
-        backstory:
-          type: string
-        language:
-          type: string
-        timestamp:
-          type: string
-          format: date-time
-    CharacterCreateResponse:
-      type: object
-      properties:
-        charID:
-          type: string
-        status:
           type: string
   securitySchemes:
     ConvaiApiKey:
