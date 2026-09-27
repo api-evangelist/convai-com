@@ -267,6 +267,22 @@ paths:
           description: Trigger deleted
 components:
   schemas:
+    Trigger:
+      type: object
+      required:
+      - character_id
+      - trigger_name
+      properties:
+        character_id:
+          type: string
+        trigger_id:
+          type: string
+        trigger_name:
+          type: string
+        trigger_message:
+          type: string
+        destination_section:
+          type: string
     Section:
       type: object
       required:
@@ -286,22 +302,6 @@ components:
           type: string
         updates_player_persona:
           type: boolean
-    Trigger:
-      type: object
-      required:
-      - character_id
-      - trigger_name
-      properties:
-        character_id:
-          type: string
-        trigger_id:
-          type: string
-        trigger_name:
-          type: string
-        trigger_message:
-          type: string
-        destination_section:
-          type: string
   securitySchemes:
     ConvaiApiKey:
       type: apiKey
