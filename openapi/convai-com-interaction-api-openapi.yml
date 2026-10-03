@@ -44,6 +44,24 @@ paths:
                 $ref: '#/components/schemas/GetResponseResponse'
 components:
   schemas:
+    GetResponseResponse:
+      type: object
+      properties:
+        text:
+          type: string
+          description: Character text reply
+        audio:
+          type: string
+          format: byte
+          description: Base64-encoded audio response
+        sessionID:
+          type: string
+        action:
+          type: string
+        emotion:
+          type: string
+        narrativeSectionId:
+          type: string
     GetResponseRequest:
       type: object
       required:
@@ -67,24 +85,6 @@ components:
           type: string
           format: binary
           description: Optional audio file (wav) for voice input
-    GetResponseResponse:
-      type: object
-      properties:
-        text:
-          type: string
-          description: Character text reply
-        audio:
-          type: string
-          format: byte
-          description: Base64-encoded audio response
-        sessionID:
-          type: string
-        action:
-          type: string
-        emotion:
-          type: string
-        narrativeSectionId:
-          type: string
   securitySchemes:
     ConvaiApiKey:
       type: apiKey

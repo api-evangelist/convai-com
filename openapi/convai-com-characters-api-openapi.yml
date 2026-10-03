@@ -137,22 +137,6 @@ paths:
           description: Character cloned
 components:
   schemas:
-    Character:
-      type: object
-      properties:
-        charID:
-          type: string
-        charName:
-          type: string
-        voiceType:
-          type: string
-        backstory:
-          type: string
-        language:
-          type: string
-        timestamp:
-          type: string
-          format: date-time
     CharacterUpdateRequest:
       type: object
       required:
@@ -175,6 +159,22 @@ components:
           type: string
         status:
           type: string
+    Character:
+      type: object
+      properties:
+        charID:
+          type: string
+        charName:
+          type: string
+        voiceType:
+          type: string
+        backstory:
+          type: string
+        language:
+          type: string
+        timestamp:
+          type: string
+          format: date-time
     CharacterCreateRequest:
       type: object
       required:
