@@ -247,6 +247,8 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/convai-com.png
 access: 3rd-Party
 common:
+- type: Pricing
+  url: https://convai.com/pricing
 - type: Website
   url: https://www.convai.com/
 - type: PostmanWorkspace
