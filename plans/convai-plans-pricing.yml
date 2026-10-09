@@ -1,74 +1,166 @@
-specification: API Commons Plans
-specificationVersion: '0.1'
-schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
-provider: Convai
-providerId: convai-com
-created: '2026-05-25'
-modified: '2026-05-25'
-reconciled: false
-tags:
-  - AI
-  - Conversational AI
-  - NPCs
-  - Virtual Worlds
-description: |
-  Plans and feature tiers for the Convai conversational AI platform. Tier
-  feature availability documented in the Core API Reference (Knowledge Bank
-  and Custom LLM require Enterprise; Chat History requires Scale; Evaluation
-  requires Professional). Per-tier interaction quotas and exact monthly prices
-  are published on convai.com/pricing; the price fields below should be
-  reconciled directly against the live pricing page before relying on them
-  for billing decisions.
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-10-07'
+method: searched
+source: https://convai.com/pricing
 sources:
-  - https://convai.com/pricing
-  - https://docs.convai.com/api-docs/api-reference/core-api-reference
+- https://convai.com/pricing
+provenance:
+  tool: all/0-working/economics/harvest_pricing.py
+  run: 20261007T112025
+  grounding: every price_text was found verbatim in the fetched page text
+audience: developer-api
+pricing_basis: tiered-subscription
+delivery:
+  delivery: managed+licensed
+  method: page
+  read: '2026-10-07'
+  evidence: On-Prem Deployment Option To deploy and run all of Convai Backend including every AI service
+    in your datacenter.
+  managed_tier: Indie Dev
+published: true
+note: Tiered monthly/yearly plans with interaction quotas; Enterprise is custom quote with on-prem deployment
+  option.
+plan_count: 10
+currency: USD
 plans:
-  - id: convai-free
-    name: Free
-    type: free
-    description: Trial / hobbyist tier with limited monthly interactions and access to the playground.
-    features:
-      - Convai Playground access
-      - Character creation
-      - Limited monthly interactions
-      - Unity, Unreal, and Web plugins
-    entries: []
-  - id: convai-indie
-    name: Indie
-    type: subscription
-    description: Single-seat tier for indie developers shipping games and prototypes.
-    features:
-      - Higher monthly interaction quota
-      - Unity and Unreal plugins
-      - Email support
-    entries: []
-  - id: convai-professional
-    name: Professional
-    type: subscription
-    description: Team tier with larger interaction quotas, multi-seat access, and the Evaluation API.
-    features:
-      - Increased monthly interaction quota
-      - Evaluation API access
-      - Multi-seat collaboration
-      - Forum and email support
-    entries: []
-  - id: convai-scale
-    name: Scale
-    type: subscription
-    description: Production tier for live games and apps with the Chat History API and elevated quotas.
-    features:
-      - Chat History API access
-      - Higher concurrency and quotas
-      - Priority support
-    entries: []
-  - id: convai-enterprise
-    name: Enterprise
-    type: contract
-    description: Custom-priced enterprise tier with Knowledge Bank, Custom LLM, on-prem and dedicated options.
-    features:
-      - Knowledge Bank API
-      - Custom LLM (BYO OpenAI-compatible model)
-      - Text-to-Speech API
-      - SLA and dedicated support
-      - Custom commercial terms
-    entries: []
+- name: Free
+  price_text: $0 /mo
+  price: 0
+  currency: USD
+  period: month
+  included_quota: 100/month Interaction Quota, 60 mins Cloud Rendered Avatar Studio and Convai Sim, 1
+    Character Session Concurrency
+- name: Indie Dev
+  price_text: $29/mo
+  price: 29
+  currency: USD
+  period: month
+  included_quota: 3000/month Interaction Quota, 600 mins Cloud Rendered, 1 Character Session Concurrency
+- name: Indie Dev (yearly)
+  price_text: $22 /mo
+  price: 22
+  currency: USD
+  period: month
+  included_quota: Billed yearly
+- name: Professional
+  price_text: $99/mo
+  price: 99
+  currency: USD
+  period: month
+  included_quota: 10,000/month Interaction Quota, 2,400 mins Cloud Rendered, 3 Character Session Concurrency
+- name: Professional (yearly)
+  price_text: $69 /mo
+  price: 69
+  currency: USD
+  period: month
+  included_quota: Billed yearly
+- name: Scale
+  price_text: $499/mo
+  price: 499
+  currency: USD
+  period: month
+  included_quota: 50,000/month Interaction Quota, 10,200 mins Cloud Rendered, 15 Character Session Concurrency
+- name: Scale (yearly)
+  price_text: $299 /mo
+  price: 299
+  currency: USD
+  period: month
+  included_quota: Billed yearly
+- name: Business
+  price_text: $1199/mo
+  price: 1199
+  currency: USD
+  period: month
+  included_quota: 125,000/month Interaction Quota, 21,000 mins Cloud Rendered, 30 Character Session Concurrency
+- name: Business (yearly)
+  price_text: $499 /mo
+  price: 499
+  currency: USD
+  period: month
+  included_quota: Billed yearly, LIMITED TIME OFFER
+- name: Enterprise
+  price_text: Custom Pricing
+  period: none
+  included_quota: Data Ownership, Security, and Compliance; SLAs; Priority Support; On-Prem Deployment
+    Option
+rate_limit_statements:
+- Character Session Concurrency The maximum number of simultaneous interactions an API key can support,
+  regardless of the number of existing AI characters 1 1 3 15 30
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - free
+  - subscription
+  units: []
+  plans:
+  - name: Free
+    access: other
+    model: free
+    model_how: derived
+    units: []
+    periods:
+    - month
+  - name: Indie Dev
+    access: other
+    model: subscription
+    model_how: derived
+    units: []
+    periods:
+    - month
+  - name: Indie Dev (yearly)
+    access: other
+    model: subscription
+    model_how: derived
+    units: []
+    periods:
+    - month
+  - name: Professional
+    access: other
+    model: subscription
+    model_how: derived
+    units: []
+    periods:
+    - month
+  - name: Professional (yearly)
+    access: other
+    model: subscription
+    model_how: derived
+    units: []
+    periods:
+    - month
+  - name: Scale
+    access: other
+    model: subscription
+    model_how: derived
+    units: []
+    periods:
+    - month
+  - name: Scale (yearly)
+    access: other
+    model: subscription
+    model_how: derived
+    units: []
+    periods:
+    - month
+  - name: Business
+    access: other
+    model: subscription
+    model_how: derived
+    units: []
+    periods:
+    - month
+  - name: Business (yearly)
+    access: other
+    model: subscription
+    model_how: derived
+    units: []
+    periods:
+    - month
+  - name: Enterprise
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods:
+    - none
