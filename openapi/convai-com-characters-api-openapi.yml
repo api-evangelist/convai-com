@@ -144,10 +144,8 @@ components:
           type: string
         status:
           type: string
-    CharacterUpdateRequest:
+    Character:
       type: object
-      required:
-      - charID
       properties:
         charID:
           type: string
@@ -159,6 +157,9 @@ components:
           type: string
         language:
           type: string
+        timestamp:
+          type: string
+          format: date-time
     CharacterCreateRequest:
       type: object
       required:
@@ -178,8 +179,10 @@ components:
           default: en-us
         timezone:
           type: string
-    Character:
+    CharacterUpdateRequest:
       type: object
+      required:
+      - charID
       properties:
         charID:
           type: string
@@ -191,9 +194,6 @@ components:
           type: string
         language:
           type: string
-        timestamp:
-          type: string
-          format: date-time
   securitySchemes:
     ConvaiApiKey:
       type: apiKey
