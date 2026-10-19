@@ -137,15 +137,10 @@ paths:
           description: Character cloned
 components:
   schemas:
-    CharacterCreateResponse:
+    CharacterUpdateRequest:
       type: object
-      properties:
-        charID:
-          type: string
-        status:
-          type: string
-    Character:
-      type: object
+      required:
+      - charID
       properties:
         charID:
           type: string
@@ -157,9 +152,6 @@ components:
           type: string
         language:
           type: string
-        timestamp:
-          type: string
-          format: date-time
     CharacterCreateRequest:
       type: object
       required:
@@ -179,10 +171,8 @@ components:
           default: en-us
         timezone:
           type: string
-    CharacterUpdateRequest:
+    Character:
       type: object
-      required:
-      - charID
       properties:
         charID:
           type: string
@@ -193,6 +183,16 @@ components:
         backstory:
           type: string
         language:
+          type: string
+        timestamp:
+          type: string
+          format: date-time
+    CharacterCreateResponse:
+      type: object
+      properties:
+        charID:
+          type: string
+        status:
           type: string
   securitySchemes:
     ConvaiApiKey:

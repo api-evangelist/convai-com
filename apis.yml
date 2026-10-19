@@ -118,25 +118,6 @@ apis:
     url: json-schema/convai-interaction-schema.json
   - type: Documentation
     url: https://docs.convai.com/api-docs/api-reference/live-api-reference
-- aid: convai-com:convai-com-live-api
-  name: Convai Live API
-  description: The Live API from Convai — 1 operation(s) for live.
-  humanURL: https://docs.convai.com/api-docs/api-reference/core-api-reference
-  tags:
-  - Live
-  properties:
-  - type: OpenAPI
-    url: openapi/convai-com-live-api-openapi.yml
-  - type: Documentation
-    url: https://docs.convai.com/api-docs/api-reference/core-api-reference
-  - type: JSONSchema
-    url: json-schema/convai-character-schema.json
-  - type: JSONLD
-    url: json-ld/convai-context.jsonld
-  - type: JSONSchema
-    url: json-schema/convai-interaction-schema.json
-  - type: Documentation
-    url: https://docs.convai.com/api-docs/api-reference/live-api-reference
 - aid: convai-com:convai-com-narrative-api
   name: Convai Narrative API
   description: The Narrative API from Convai — 11 operation(s) for narrative.
@@ -184,6 +165,82 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/convai-com-tts-api-openapi.yml
+  - type: Documentation
+    url: https://docs.convai.com/api-docs/api-reference/core-api-reference
+  - type: JSONSchema
+    url: json-schema/convai-character-schema.json
+  - type: JSONLD
+    url: json-ld/convai-context.jsonld
+  - type: JSONSchema
+    url: json-schema/convai-interaction-schema.json
+  - type: Documentation
+    url: https://docs.convai.com/api-docs/api-reference/live-api-reference
+- aid: convai-com:convai-com-app-api
+  name: Convai App API
+  description: The app API from Convai — 12 operation(s) for app.
+  humanURL: https://docs.convai.com/api-docs/api-reference/core-api-reference
+  tags:
+  - app
+  properties:
+  - type: OpenAPI
+    url: openapi/convai-com-app-api-openapi.yml
+  - type: Documentation
+    url: https://docs.convai.com/api-docs/api-reference/core-api-reference
+  - type: JSONSchema
+    url: json-schema/convai-character-schema.json
+  - type: JSONLD
+    url: json-ld/convai-context.jsonld
+  - type: JSONSchema
+    url: json-schema/convai-interaction-schema.json
+  - type: Documentation
+    url: https://docs.convai.com/api-docs/api-reference/live-api-reference
+- aid: convai-com:convai-com-disconnect-api
+  name: Convai Disconnect API
+  description: The Disconnect API from Convai — 1 operation(s) for disconnect.
+  humanURL: https://docs.convai.com/api-docs/api-reference/core-api-reference
+  tags:
+  - Disconnect
+  properties:
+  - type: OpenAPI
+    url: openapi/convai-com-disconnect-api-openapi.yml
+  - type: Documentation
+    url: https://docs.convai.com/api-docs/api-reference/core-api-reference
+  - type: JSONSchema
+    url: json-schema/convai-character-schema.json
+  - type: JSONLD
+    url: json-ld/convai-context.jsonld
+  - type: JSONSchema
+    url: json-schema/convai-interaction-schema.json
+  - type: Documentation
+    url: https://docs.convai.com/api-docs/api-reference/live-api-reference
+- aid: convai-com:convai-com-healthz-api
+  name: Convai Healthz API
+  description: The Healthz API from Convai — 1 operation(s) for healthz.
+  humanURL: https://docs.convai.com/api-docs/api-reference/core-api-reference
+  tags:
+  - Healthz
+  properties:
+  - type: OpenAPI
+    url: openapi/convai-com-healthz-api-openapi.yml
+  - type: Documentation
+    url: https://docs.convai.com/api-docs/api-reference/core-api-reference
+  - type: JSONSchema
+    url: json-schema/convai-character-schema.json
+  - type: JSONLD
+    url: json-ld/convai-context.jsonld
+  - type: JSONSchema
+    url: json-schema/convai-interaction-schema.json
+  - type: Documentation
+    url: https://docs.convai.com/api-docs/api-reference/live-api-reference
+- aid: convai-com:convai-com-latency-api
+  name: Convai Latency API
+  description: The latency API from Convai — 1 operation(s) for latency.
+  humanURL: https://docs.convai.com/api-docs/api-reference/core-api-reference
+  tags:
+  - latency
+  properties:
+  - type: OpenAPI
+    url: openapi/convai-com-latency-api-openapi.yml
   - type: Documentation
     url: https://docs.convai.com/api-docs/api-reference/core-api-reference
   - type: JSONSchema
