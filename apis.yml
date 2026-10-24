@@ -161,6 +161,8 @@ apis:
   description: The TTS API from Convai — 3 operation(s) for tts.
   humanURL: https://docs.convai.com/api-docs/api-reference/core-api-reference
   tags:
+  - Text-to-Speech
+  tags_raw:
   - TTS
   properties:
   - type: OpenAPI
@@ -180,6 +182,8 @@ apis:
   description: The app API from Convai — 12 operation(s) for app.
   humanURL: https://docs.convai.com/api-docs/api-reference/core-api-reference
   tags:
+  - App
+  tags_raw:
   - app
   properties:
   - type: OpenAPI
@@ -237,6 +241,8 @@ apis:
   description: The latency API from Convai — 1 operation(s) for latency.
   humanURL: https://docs.convai.com/api-docs/api-reference/core-api-reference
   tags:
+  - Latency
+  tags_raw:
   - latency
   properties:
   - type: OpenAPI
@@ -261,7 +267,7 @@ tags:
 - Games
 - Avatars
 - Speech
-- TTS
+- Text-to-Speech
 - WebRTC
 tags_raw:
 - AI
